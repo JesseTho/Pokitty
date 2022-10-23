@@ -1,0 +1,41 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 552.0
+margin_top = 163.0
+margin_right = 996.0
+margin_bottom = 483.0
+text = "You are a feline parent with 12 hungry kittens to feed. To make money, you open a food truck that sells poke bowls made with your secret recipe. Can you survive the cutthroat competition of the food truck business?
+
+To win, operate your food truck for 3, 5, or 7 days without running out of money. Buy supplies at the market. Sell poke bowls to gain money. Meet the customer’s quality demands to increase your popularity on Meowspace.
+"
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 552.0
+margin_top = 76.0
+margin_right = 996.0
+margin_bottom = 396.0
+text = "Poke Cat"
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 600.0
+margin_top = 454.0
+margin_right = 832.0
+margin_bottom = 542.0
+
+[node name="Label" type="Label" parent="Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -22.0
+margin_right = 57.0
+margin_bottom = 23.0
+text = "START"
+align = 1
+valign = 1
