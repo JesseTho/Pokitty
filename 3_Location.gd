@@ -1,6 +1,7 @@
 extends Node2D
 
-
+var feeHigh = 100;
+var feeLow = 50;
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,6 +16,17 @@ func _on_Button_pressed(var SceneName, var location):
 	GameManager.location = location
 	print("Location:" + str(GameManager.location))
 	
+	if(GameManager.location == "Wakiki"):
+		GameManager.money = GameManager - feeHigh;
+		
+	if(GameManager.location == "Kalihi"):
+		GameManager.money = GameManager - feeLow;
+		
+	if(GameManager.location == "Kakaako"):
+		GameManager.money = GameManager - feeHigh;
+		
+	if(GameManager.location == "NorthShore"):
+		GameManager.money = GameManager - feeLow;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

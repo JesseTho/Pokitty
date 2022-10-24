@@ -9,6 +9,10 @@ var utensils
 var freshAhi
 var frozenAhi
 var location
+var visitors
+var freshPrice
+var frozenPrice
+var event
 
 # Declare member variables here. Examples:
 # var a = 2
