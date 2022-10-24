@@ -11,7 +11,13 @@ config_version=4
 [application]
 
 config/name="Pokitty"
+run/main_scene="res://0_Root.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameManager="*res://GameManager.gd"
+SceneManager="*res://SceneManager.gd"
 
 [gui]
 

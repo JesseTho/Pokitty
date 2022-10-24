@@ -1,3 +1,55 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://2_Date.gd" type="Script" id=1]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="3Day" type="Button" parent="."]
+margin_left = 847.0
+margin_top = 88.0
+margin_right = 959.0
+margin_bottom = 185.0
+
+[node name="Label" type="Label" parent="3Day"]
+margin_left = 28.0
+margin_top = 28.0
+margin_right = 83.0
+margin_bottom = 70.0
+text = "3"
+align = 1
+valign = 1
+
+[node name="5Day" type="Button" parent="."]
+margin_left = 847.0
+margin_top = 265.0
+margin_right = 959.0
+margin_bottom = 362.0
+
+[node name="Label" type="Label" parent="5Day"]
+margin_left = 28.0
+margin_top = 28.0
+margin_right = 83.0
+margin_bottom = 70.0
+text = "5"
+align = 1
+valign = 1
+
+[node name="7Day" type="Button" parent="."]
+margin_left = 847.0
+margin_top = 456.0
+margin_right = 959.0
+margin_bottom = 553.0
+
+[node name="Label" type="Label" parent="7Day"]
+margin_left = 28.0
+margin_top = 28.0
+margin_right = 83.0
+margin_bottom = 70.0
+text = "7"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="3Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
+[connection signal="pressed" from="5Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 5 ]]
+[connection signal="pressed" from="7Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 7 ]]
