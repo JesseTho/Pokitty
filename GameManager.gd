@@ -51,8 +51,44 @@ func ApplyVisitorCount():
 		visitors = visitors * touristMod[tourists]
 		
 	#Weather
-	visitors = int(visitors * weatherMod[weather]) #forces visitor to int
+	visitors = int(visitors * weatherMod[weather]) #forces visitor to 
 	
+func newDay():
+	var rng = RandomNumberGenerator.new()
+	#WEATEHR 
+	
+	rng.randomize()
+	weather = rng.randi_range(0,2)
+	print("Weather is: " + weatherName[weather])
+	
+	#FISH PRICES
+	rng.randomize()
+	var FishPrice = rng.randi_range(fishPriceRNG[0],fishPriceRNG[1]) 
+	frozenPrice = FishPrice
+	freshPrice = FishPrice * fishPriceMod
+	print("Frozen Fish Price:"+ str(frozenPrice))
+	print("Fresh Fish Price:"+ str(freshPrice))
+
+	#BASE VISITOR COUNT
+	rng.randomize()
+	visitors = rng.randi_range(visitorRNG[0],visitorRNG[1])
+			
+	#TOURISTS
+	rng.randomize()
+	tourists = rng.randi_range(0,2)
+	print ("Base Visitors: " + str(visitors) + " Tourists: " + str(rangeNames[tourists]))
+	
+	#EVENTS
+	rng.randomize()
+	var eventToday = rng.randi_range(0,1)
+	if(eventToday):
+		rng.randomize()
+		event = rng.randi_range(0,eventName.size()-1)
+		print("Today's Event: " + str(eventName[event])) 
+		
+	else:
+		event = null
+		print("No Event Today!")
 
 func _ready():
 	pass
