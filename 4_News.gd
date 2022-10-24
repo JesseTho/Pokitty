@@ -25,10 +25,14 @@ func newDay():
 	#VISTOR COUNT
 	rng.randomize()
 	GameManager.visitors = rng.randi_range(GameManager.visitorRNG[0],GameManager.visitorRNG[1])
-	print ("Todays Visitors: " + str(GameManager.visitors) )
 	
+	rng.randomize()
 	
-	#EVENT
+	#TouristCount
+	GameManager.tourists = rng.randi_range(0,2)
+	print ("Base Visitors: " + str(GameManager.visitors) + " Tourists: " + str(GameManager.rangeNames[GameManager.tourists]))
+	
+		#EVENT
 	rng.randomize()
 	var eventToday = rng.randi_range(0,1)
 	if(eventToday):

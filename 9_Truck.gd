@@ -20,3 +20,5 @@ func StartDay():
 	#Deduct Location Fee
 	GameManager.money = GameManager.money - GameManager.locationFee[GameManager.location]
 	print("Balance after location fee is: $" + str(GameManager.money))
+	GameManager.ApplyVisitorCount()
+	print("Today's Visitors: " + str(GameManager.visitors))
