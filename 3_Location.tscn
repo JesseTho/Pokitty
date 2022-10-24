@@ -65,7 +65,7 @@ text = "North Shore"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="Waikiki" to="." method="_on_Button_pressed" binds= [ "5_Inventory", "Waikiki" ]]
-[connection signal="pressed" from="Kalihi" to="." method="_on_Button_pressed" binds= [ "5_Inventory", "Kalihi" ]]
-[connection signal="pressed" from="Kakaako" to="." method="_on_Button_pressed" binds= [ "5_Inventory", "Kakaako" ]]
-[connection signal="pressed" from="NorthShore" to="." method="_on_Button_pressed" binds= [ "5_Inventory", "NorthShore" ]]
+[connection signal="pressed" from="Waikiki" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 0 ]]
+[connection signal="pressed" from="Kalihi" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 1 ]]
+[connection signal="pressed" from="Kakaako" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 2 ]]
+[connection signal="pressed" from="NorthShore" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 3 ]]

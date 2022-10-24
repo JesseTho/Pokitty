@@ -7,6 +7,5 @@ func _ready():
 	#print("Loading Scene 1_Intro")
 	pass
 func defaultVars():
-	GameManager.money = 500 #starting money
-
+	GameManager.money = GameManager.startingMoney
 

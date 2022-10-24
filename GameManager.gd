@@ -1,8 +1,9 @@
 extends Node
-
+#tracked vars
 var money
 var popularity
 var days
+var currentDay
 var rice
 var seasoning
 var utensils
@@ -13,16 +14,26 @@ var visitors
 var freshPrice
 var frozenPrice
 var event
+var weather
+var bowlPrice
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+#Game Balance 
+var startingMoney = 500 #starting money
+var fishPriceRNG = [10,20] #range of price of fish
+var fishPriceMod = 1.25 #how much more is fresh fish compared to frozen
+var weatherMod = [1.5,1,0.5] #how weather effects visitors
+var weatherName = ["Sunny","Cloudy","Rainy"]
+var visitorRNG = [30,100] #range of visitors in a day
+var locationName = ["Wakiki","Kalihi","Kaka'ako","North Shore"]
+var locationFee = [200,100,200,100] #Fee of Location
+var eventName = ["Halloween Parade", "Eddie Would Go", "Spam Fest"]
+var ricePrices = [5,8,10] 
+var riceAmt = [1,2,3] #Amount you can buy in lbs 
+var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
+var utensilAmt = [20,50,100] #Amount of you can buy in Sets
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
