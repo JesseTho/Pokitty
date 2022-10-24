@@ -33,7 +33,7 @@ func newDay():
 	var eventToday = rng.randi_range(0,1)
 	if(eventToday):
 		rng.randomize()
-		GameManager.event = rng.randi_range(0,GameManager.eventName.size())
+		GameManager.event = rng.randi_range(0,GameManager.eventName.size()-1)
 		print("Today's Event: " + str(GameManager.eventName[GameManager.event])) 
 		
 	else:
