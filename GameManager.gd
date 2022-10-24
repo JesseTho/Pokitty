@@ -36,6 +36,8 @@ var riceAmt = [1,2,3] #Amount you can buy in lbs
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
 var utensilAmt = [20,50,100] #Amount of you can buy in Sets
 
+
+#Calculations
 func ApplyVisitorCount():
 	
 	#Events
@@ -52,7 +54,8 @@ func ApplyVisitorCount():
 		
 	#Weather
 	visitors = int(visitors * weatherMod[weather]) #forces visitor to 
-	
+
+#Day Stats Caculated in 4_News	
 func newDay():
 	var rng = RandomNumberGenerator.new()
 	#WEATEHR 

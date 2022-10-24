@@ -1,9 +1,7 @@
 extends Node2D
 
 func _ready(): #LOAD NEWS POPUP
-	var LoadScene = load("res://4_News.tscn").instance()
-	add_child(LoadScene)
-	pass # Replace with function body.
+	SceneManager.LoadDialog("4_News")
 
 func _on_Button_pressed(var SceneName, var location):
 	SceneManager.LoadScene(SceneName)
