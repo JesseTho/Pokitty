@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="Pokitty"
-run/main_scene="res://0_Root.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/0_Root.tscn"
+config/icon="res://images/icon.png"
 
 [autoload]
 
-GameManager="*res://GameManager.gd"
-SceneManager="*res://SceneManager.gd"
+GameManager="*res://scripts/GameManager.gd"
+SceneManager="*res://scripts/SceneManager.gd"
 
 [gui]
 
@@ -32,4 +32,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://scripts/default_env.tres"

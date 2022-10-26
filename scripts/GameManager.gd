@@ -92,7 +92,17 @@ func newDay():
 	else:
 		event = null
 		print("No Event Today!")
+	
 
+func buyFish(var fresh, var frozen):
+	
+	pass
+func buyRice(var bag1, bag2, bag3):
+	pass
+func buySeasoning(var bag0, var bag1,var bag2):
+	pass
+func buyUtensil(var set20, var set50, var set100):
+	pass
 func _ready():
 	pass
 

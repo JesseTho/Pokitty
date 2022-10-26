@@ -7,7 +7,7 @@ func LoadScene(var Scene):
 	#Get the Root Node
 	rootNode = get_tree().get_root().get_node("Root")
 
-	var LoadScene = load("res://" + Scene + ".tscn").instance()
+	var LoadScene = load("res://scenes/" + Scene + ".tscn").instance()
 	LoadScene.name = Scene
 	#Remove Old Scene
 	if(currentScene != "none"):
@@ -19,7 +19,7 @@ func LoadScene(var Scene):
 	print("Loading " + Scene)
 
 func LoadDialog(var Scene): #For Menus with Exit Buttons
-	var LoadScene = load("res://"+ str(Scene)+".tscn").instance()
+	var LoadScene = load("res://scenes/"+ str(Scene)+".tscn").instance()
 	rootNode.add_child(LoadScene)
 	pass # Replace with function body.
 	
