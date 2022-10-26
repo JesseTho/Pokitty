@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/seal-with-fish-placeholder.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 101.0
+margin_top = 57.0
+margin_right = 910.0
+margin_bottom = 541.0
+color = Color( 0.709804, 0.709804, 0.439216, 1 )
+
+[node name="Seal-with-fish-placeholder" type="Sprite" parent="ColorRect"]
+position = Vector2( 403, 266 )
+scale = Vector2( 0.439798, 0.439798 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 750.0
+margin_bottom = 99.0
+text = "Out of Money!"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 104.0
+margin_top = 111.0
+margin_right = 330.0
+margin_bottom = 184.0
+text = "You are running out of money and don’t know what to do! Luckily, your best friend Koalani the Seal visits and gives you some fresh fish."
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="ColorRect"]
+margin_left = 186.0
+margin_top = 406.0
+margin_right = 705.0
+margin_bottom = 420.0
+text = "“Don’t give up on your business! Take this and keep making those ono poke bowls.”"
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 750.0
+margin_top = 10.0
+margin_right = 793.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="ColorRect/Button"]
+margin_right = 40.0
+margin_bottom = 40.0
+text = "X"
+align = 1
+valign = 1

@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/influencer-cat-placeholder.jpeg" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 101.0
+margin_top = 57.0
+margin_right = 910.0
+margin_bottom = 541.0
+color = Color( 0.709804, 0.709804, 0.439216, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 750.0
+margin_bottom = 99.0
+text = "Congratulations, you have completed [game length] days!"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 462.0
+margin_top = 122.0
+margin_right = 682.0
+margin_bottom = 306.0
+text = "You are visited by the Fat Cats, the richest cats on the island.
+
+\"Your cooking is magical. We want you on a TV show, a cookbook, and a line of poke-scented perfume. We want to make you into a SUPERSTAR!\"
+
+Do you accept their offer?
+"
+align = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 462.0
+margin_top = 320.0
+margin_right = 680.0
+margin_bottom = 361.0
+
+[node name="Label" type="Label" parent="ColorRect/Button"]
+margin_right = 217.0
+margin_bottom = 40.0
+text = "Accept, End Game"
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="ColorRect"]
+margin_left = 462.0
+margin_top = 380.0
+margin_right = 680.0
+margin_bottom = 421.0
+
+[node name="Label" type="Label" parent="ColorRect/Button2"]
+margin_right = 217.0
+margin_bottom = 40.0
+text = "Decline, Continue Playing"
+align = 1
+valign = 1
+
+[node name="Influencer-cat-placeholder" type="Sprite" parent="."]
+position = Vector2( 338, 314 )
+texture = ExtResource( 1 )
