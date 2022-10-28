@@ -12,8 +12,9 @@ func _ready():
 
 func _on_Button_pressed(var SceneName, var DayNum):
 	GameManager.days = DayNum
-	SceneManager.LoadScene(SceneName)
 	print("Days Selected:"+ str(GameManager.days))
+	SceneManager.LoadScene(SceneName)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
