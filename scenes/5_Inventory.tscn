@@ -10,9 +10,12 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 120.0 ]
+}
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 300 )
+position = Vector2( 512, 315 )
 texture = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
@@ -272,12 +275,12 @@ margin_bottom = -16.0
 [node name="OpenButtonLabel" type="Label" parent="VBoxContainer2/Price/OpenButton"]
 margin_top = -1.0
 margin_right = 155.0
-margin_bottom = 33.0
+margin_bottom = 35.0
 text = "Now Open!"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/Price"]
+[node name="PriceHBox" type="HBoxContainer" parent="VBoxContainer2/Price"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -286,16 +289,17 @@ margin_bottom = 10.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="Subtract Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 133.0
-margin_right = 150.0
+[node name="SubtractButton" type="Button" parent="VBoxContainer2/Price/PriceHBox"]
+margin_left = 132.0
+margin_right = 152.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
 text = "-"
 
-[node name="CurrentPrice" type="Label" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 170.0
+[node name="CurrentPrice" type="Label" parent="VBoxContainer2/Price/PriceHBox"]
+margin_left = 172.0
 margin_top = 3.0
-margin_right = 230.0
+margin_right = 232.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -303,10 +307,11 @@ text = "$12"
 align = 1
 valign = 1
 
-[node name="Add Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 250.0
-margin_right = 270.0
+[node name="AddButton" type="Button" parent="VBoxContainer2/Price/PriceHBox"]
+margin_left = 252.0
+margin_right = 272.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
 text = "+"
 
 [connection signal="pressed" from="VBoxContainer2/Price/OpenButton" to="." method="_on_Button_pressed" binds= [ "9_Truck" ]]
