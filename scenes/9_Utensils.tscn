@@ -194,6 +194,7 @@ margin_left = 700.0
 margin_top = 150.0
 margin_right = 974.0
 margin_bottom = 500.0
+color = Color( 1, 1, 1, 0.901961 )
 
 [node name="Bowl" type="Sprite" parent="Recipe"]
 position = Vector2( 170, 357 )
