@@ -63,15 +63,16 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="SubtractButton" type="Button" parent="VBoxContainer/SmallOrder/BuyHBox"]
-margin_left = 31.0
-margin_right = 48.0
+margin_left = 30.0
+margin_right = 50.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
 text = "-"
 
 [node name="CurrentLabel" type="Label" parent="VBoxContainer/SmallOrder/BuyHBox"]
-margin_left = 68.0
+margin_left = 70.0
 margin_top = 3.0
-margin_right = 128.0
+margin_right = 130.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -80,8 +81,8 @@ align = 1
 valign = 1
 
 [node name="AddButton" type="Button" parent="VBoxContainer/SmallOrder/BuyHBox"]
-margin_left = 148.0
-margin_right = 168.0
+margin_left = 150.0
+margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
@@ -115,15 +116,16 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="SubtractButton" type="Button" parent="VBoxContainer/MediumOrder/BuyHBox"]
-margin_left = 31.0
-margin_right = 48.0
+margin_left = 30.0
+margin_right = 50.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
 text = "-"
 
 [node name="CurrentLabel" type="Label" parent="VBoxContainer/MediumOrder/BuyHBox"]
-margin_left = 68.0
+margin_left = 70.0
 margin_top = 3.0
-margin_right = 128.0
+margin_right = 130.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -132,8 +134,8 @@ align = 1
 valign = 1
 
 [node name="AddButton" type="Button" parent="VBoxContainer/MediumOrder/BuyHBox"]
-margin_left = 148.0
-margin_right = 168.0
+margin_left = 150.0
+margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
@@ -167,15 +169,16 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="SubtractButton" type="Button" parent="VBoxContainer/BigOrder/BuyHBox"]
-margin_left = 31.0
-margin_right = 48.0
+margin_left = 30.0
+margin_right = 50.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
 text = "-"
 
 [node name="CurrentLabel" type="Label" parent="VBoxContainer/BigOrder/BuyHBox"]
-margin_left = 68.0
+margin_left = 70.0
 margin_top = 3.0
-margin_right = 128.0
+margin_right = 130.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -184,8 +187,8 @@ align = 1
 valign = 1
 
 [node name="AddButton" type="Button" parent="VBoxContainer/BigOrder/BuyHBox"]
-margin_left = 148.0
-margin_right = 168.0
+margin_left = 150.0
+margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
