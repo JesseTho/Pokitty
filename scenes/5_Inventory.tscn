@@ -287,22 +287,25 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="Subtract Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 151.0
-margin_right = 168.0
+margin_left = 133.0
+margin_right = 150.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="CurrentPrice" type="Label" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 188.0
+margin_left = 170.0
 margin_top = 3.0
-margin_right = 212.0
+margin_right = 230.0
 margin_bottom = 17.0
+rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$12"
+align = 1
+valign = 1
 
 [node name="Add Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
-margin_left = 232.0
-margin_right = 252.0
+margin_left = 250.0
+margin_right = 270.0
 margin_bottom = 20.0
 text = "+"
 
