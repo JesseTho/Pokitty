@@ -1,33 +1,309 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/5_Inventory.gd" type="Script" id=1]
+[ext_resource path="res://images/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://images/bowl.png" type="Texture" id=3]
+[ext_resource path="res://images/seasoning.png" type="Texture" id=4]
+[ext_resource path="res://images/fish.png" type="Texture" id=5]
+[ext_resource path="res://images/rice.png" type="Texture" id=6]
+[ext_resource path="res://images/location_icon.png" type="Texture" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1026.0
-margin_bottom = 72.0
-color = Color( 0.745098, 0.392157, 0.392157, 1 )
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="ColorRect"]
-margin_right = 1026.0
-margin_bottom = 72.0
+[node name="Title" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 100.0
 text = "Farmers Market"
 align = 1
 valign = 1
 
-[node name="Button" type="Button" parent="."]
-margin_left = 851.0
-margin_top = 546.0
-margin_right = 1006.0
-margin_bottom = 580.0
+[node name="GameStatus" type="Label" parent="Title"]
+margin_left = 133.0
+margin_top = 30.0
+margin_right = 268.0
+margin_bottom = 78.0
+text = "Day:
+Money:
+Likes:"
 
-[node name="Label" type="Label" parent="Button"]
-margin_right = 155.0
-margin_bottom = 34.0
-text = "Done"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 120.0
+margin_right = 580.0
+margin_bottom = 580.0
+custom_constants/separation = 15
+
+[node name="Ahi" type="ColorRect" parent="VBoxContainer"]
+margin_right = 560.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="AhiStore" type="Button" parent="VBoxContainer/Ahi"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -10.0
+margin_right = -24.0
+margin_bottom = 10.0
+text = "Store"
+
+[node name="Fish" type="Sprite" parent="VBoxContainer/Ahi"]
+position = Vector2( 80.25, 42 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+
+[node name="AhiAmount" type="Label" parent="VBoxContainer/Ahi"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -7.0
+margin_right = 230.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ahi"
+
+[node name="Rice" type="ColorRect" parent="VBoxContainer"]
+margin_top = 95.0
+margin_right = 560.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="RiceStore" type="Button" parent="VBoxContainer/Rice"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -10.0
+margin_right = -24.0
+margin_bottom = 10.0
+text = "Store"
+
+[node name="Rice" type="Sprite" parent="VBoxContainer/Rice"]
+position = Vector2( 83.485, 41.5 )
+scale = Vector2( 0.355, 0.355 )
+texture = ExtResource( 6 )
+
+[node name="RiceAmount" type="Label" parent="VBoxContainer/Rice"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -7.0
+margin_right = 230.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Rice"
+
+[node name="Seasoning" type="ColorRect" parent="VBoxContainer"]
+margin_top = 190.0
+margin_right = 560.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="SeasoningStore" type="Button" parent="VBoxContainer/Seasoning"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.0001
+margin_top = -10.0
+margin_right = -24.0
+margin_bottom = 10.0
+text = "Store"
+
+[node name="Seasoning" type="Sprite" parent="VBoxContainer/Seasoning"]
+position = Vector2( 79.25, 41.5693 )
+scale = Vector2( 0.390511, 0.390511 )
+texture = ExtResource( 4 )
+
+[node name="SeasoningAmount" type="Label" parent="VBoxContainer/Seasoning"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -7.0
+margin_right = 230.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Seasoning"
+
+[node name="BowlsUtensils" type="ColorRect" parent="VBoxContainer"]
+margin_top = 285.0
+margin_right = 560.0
+margin_bottom = 365.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="BowlStore" type="Button" parent="VBoxContainer/BowlsUtensils"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -10.0
+margin_right = -24.0
+margin_bottom = 10.0
+text = "Store"
+
+[node name="Bowl" type="Sprite" parent="VBoxContainer/BowlsUtensils"]
+position = Vector2( 80.3148, 41 )
+scale = Vector2( 0.395062, 0.395062 )
+texture = ExtResource( 3 )
+
+[node name="BowlsUtensilsAmount" type="Label" parent="VBoxContainer/BowlsUtensils"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -7.0
+margin_right = 230.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Bowls & Utensils"
+
+[node name="Location" type="ColorRect" parent="VBoxContainer"]
+margin_top = 380.0
+margin_right = 560.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="LocationIcon" type="Sprite" parent="VBoxContainer/Location"]
+position = Vector2( 76, 38.75 )
+scale = Vector2( 1.03571, 1.03571 )
+texture = ExtResource( 7 )
+
+[node name="LocationName" type="Label" parent="VBoxContainer/Location"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 190.0
+margin_top = -7.0
+margin_right = 230.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name of Location"
+
+[node name="LocationPrice" type="Label" parent="VBoxContainer/Location"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -7.0
+margin_right = -24.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$100"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 600.0
+margin_top = 120.0
+margin_right = 1004.0
+margin_bottom = 580.0
+custom_constants/separation = 15
+
+[node name="LocationStatus" type="ColorRect" parent="VBoxContainer2"]
+margin_right = 404.0
+margin_bottom = 222.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="LocationName" type="Label" parent="VBoxContainer2/LocationStatus"]
+anchor_right = 1.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name of Location"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed" binds= [ "9_Truck" ]]
+[node name="LocationInfo" type="Label" parent="VBoxContainer2/LocationStatus"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -14.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Consumer Expectation:
+Today's Weather:
+Today's Visitor Traffic:
+Today's Event:"
+
+[node name="Price" type="ColorRect" parent="VBoxContainer2"]
+margin_top = 237.0
+margin_right = 404.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="SetPrice" type="Label" parent="VBoxContainer2/Price"]
+anchor_right = 1.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Set Price of Poke Bowl"
+align = 1
+valign = 1
+
+[node name="OpenButton" type="Button" parent="VBoxContainer2/Price"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -77.5
+margin_top = -50.0
+margin_right = 77.5
+margin_bottom = -16.0
+
+[node name="OpenButtonLabel" type="Label" parent="VBoxContainer2/Price/OpenButton"]
+margin_top = -1.0
+margin_right = 155.0
+margin_bottom = 33.0
+text = "Now Open!"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/Price"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_bottom = 10.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Subtract Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
+margin_left = 151.0
+margin_right = 168.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="CurrentPrice" type="Label" parent="VBoxContainer2/Price/HBoxContainer"]
+margin_left = 188.0
+margin_top = 3.0
+margin_right = 212.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$12"
+
+[node name="Add Price" type="Button" parent="VBoxContainer2/Price/HBoxContainer"]
+margin_left = 232.0
+margin_right = 252.0
+margin_bottom = 20.0
+text = "+"
+
+[connection signal="pressed" from="VBoxContainer2/Price/OpenButton" to="." method="_on_Button_pressed" binds= [ "9_Truck" ]]
