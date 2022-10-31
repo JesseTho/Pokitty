@@ -1,21 +1,11 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var freshahicart 
 var frozenahicart
 var freshamt = 0
 var frozenamt = 0
-#func buttonpress(var button):
-	#if(button):
-	#	freshahicart++
-	#else if (freshahi >= 0)
-	#	freshahicart--
-	
-	#buyahi(frozenahicart,freshahicart)
-	
+
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
