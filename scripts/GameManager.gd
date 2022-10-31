@@ -16,7 +16,7 @@ var freshPrice
 var frozenPrice
 var event
 var weather
-var bowlPrice
+var bowlPrice = 12  #starting bowl price
 
 #Game Balance 
 var startingMoney = 500 #starting money
@@ -33,7 +33,9 @@ var rangeNames = ["Low","Medium","High"]
 var eventMod = 2 #modifer for events if matching location
 var ricePrices = [5,8,10] 
 var riceAmt = [1,2,3] #Amount you can buy in lbs 
+var seasonPrices = [5,8,10] #prices for seasoning
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
+var utensilPrices = [5,8,10] 
 var utensilAmt = [20,50,100] #Amount of you can buy in Sets
 
 

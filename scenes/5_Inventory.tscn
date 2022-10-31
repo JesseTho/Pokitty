@@ -319,7 +319,7 @@ margin_right = 232.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 60, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$12"
+text = "$12.00"
 align = 1
 valign = 1
 
@@ -332,4 +332,8 @@ text = "+"
 
 [connection signal="pressed" from="VBoxContainer/Ahi/AhiStore" to="." method="loadPopup" binds= [ "7_Ahi" ]]
 [connection signal="pressed" from="VBoxContainer/Rice/RiceStore" to="." method="loadPopup" binds= [ "6_Rice" ]]
+[connection signal="pressed" from="VBoxContainer/Seasoning/SeasoningStore" to="." method="loadPopup" binds= [ "8_Seasoning" ]]
+[connection signal="pressed" from="VBoxContainer/BowlsUtensils/BowlStore" to="." method="loadPopup" binds= [ "9_Utensils" ]]
 [connection signal="pressed" from="VBoxContainer2/Price/OpenButton" to="." method="_on_Button_pressed" binds= [ "9_Truck" ]]
+[connection signal="pressed" from="VBoxContainer2/Price/PriceHBox/SubtractButton" to="." method="_bowlPrice" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer2/Price/PriceHBox/AddButton" to="." method="_bowlPrice" binds= [ 1 ]]
