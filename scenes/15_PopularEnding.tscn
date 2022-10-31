@@ -1,65 +1,109 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://images/influencer-cat-placeholder.jpeg" type="Texture" id=1]
+[ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://styles/eventbox.tres" type="StyleBox" id=2]
+[ext_resource path="res://images/boss-cat.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.901961 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 101.0
-margin_top = 57.0
-margin_right = 910.0
-margin_bottom = 541.0
-color = Color( 0.709804, 0.709804, 0.439216, 1 )
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect"]
-margin_left = 50.0
-margin_top = 50.0
-margin_right = 750.0
-margin_bottom = 99.0
-text = "Congratulations, you have completed [game length] days!"
+[node name="Popup" type="Panel" parent="HBoxContainer"]
+margin_left = 112.0
+margin_right = 912.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Title" type="Label" parent="HBoxContainer/Popup"]
+margin_top = 32.0
+margin_right = 800.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Congratulations! You have completed # days!"
 align = 1
 autowrap = true
 
-[node name="Label2" type="Label" parent="ColorRect"]
-margin_left = 462.0
-margin_top = 122.0
-margin_right = 682.0
-margin_bottom = 306.0
-text = "You are visited by the Fat Cats, the richest cats on the island.
-
-\"Your cooking is magical. We want you on a TV show, a cookbook, and a line of poke-scented perfume. We want to make you into a SUPERSTAR!\"
-
-Do you accept their offer?
-"
-align = 1
+[node name="StoryLabel" type="Label" parent="HBoxContainer/Popup"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 700.0
+margin_bottom = 147.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You are visited by the Fat Cats, the richest cats on the island."
 autowrap = true
 
-[node name="Button" type="Button" parent="ColorRect"]
-margin_left = 462.0
+[node name="Boss-cat" type="Sprite" parent="HBoxContainer/Popup"]
+position = Vector2( 166, 217 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+
+[node name="Dialogue" type="Panel" parent="HBoxContainer/Popup"]
+margin_left = 285.0
+margin_top = 159.0
+margin_right = 709.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 400, 100 )
+custom_styles/panel = ExtResource( 2 )
+
+[node name="DialogueLabel" type="Label" parent="HBoxContainer/Popup/Dialogue"]
+margin_left = 26.0
+margin_top = 29.0
+margin_right = 394.0
+margin_bottom = 92.0
+size_flags_vertical = 1
+text = "\"Your cooking is magical. We want you on a TV show, a cookbook, and a line of poke-scented perfume. We want to make you into a SUPERSTAR!\""
+autowrap = true
+
+[node name="StoryLabel2" type="Label" parent="HBoxContainer/Popup"]
+margin_left = 100.0
 margin_top = 320.0
-margin_right = 680.0
-margin_bottom = 361.0
+margin_right = 264.0
+margin_bottom = 334.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Do you accept their offer?"
 
-[node name="Label" type="Label" parent="ColorRect/Button"]
-margin_right = 217.0
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Popup"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 146.0
+margin_bottom = 186.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="AcceptButton" type="Button" parent="HBoxContainer/Popup/HBoxContainer"]
+margin_left = 175.0
+margin_right = 375.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
 text = "Accept, End Game"
-align = 1
-valign = 1
 
-[node name="Button2" type="Button" parent="ColorRect"]
-margin_left = 462.0
-margin_top = 380.0
-margin_right = 680.0
-margin_bottom = 421.0
-
-[node name="Label" type="Label" parent="ColorRect/Button2"]
-margin_right = 217.0
+[node name="DeclineButton" type="Button" parent="HBoxContainer/Popup/HBoxContainer"]
+margin_left = 425.0
+margin_right = 625.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
 text = "Decline, Continue Playing"
-align = 1
-valign = 1
-
-[node name="Influencer-cat-placeholder" type="Sprite" parent="."]
-position = Vector2( 338, 314 )
-texture = ExtResource( 1 )
