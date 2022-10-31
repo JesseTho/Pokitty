@@ -64,9 +64,9 @@ scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 3 )
 
 [node name="Dialogue" type="Panel" parent="HBoxContainer/Popup"]
-margin_left = 278.0
+margin_left = 285.0
 margin_top = 133.0
-margin_right = 702.0
+margin_right = 709.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 400, 100 )
 custom_styles/panel = ExtResource( 2 )
