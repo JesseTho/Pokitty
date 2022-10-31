@@ -24,11 +24,11 @@ func _cartUpdate(var size, var addSubtract):
 		
 	if(size == "med" && medAmt + addSubtract >= 0):
 		medAmt = medAmt + addSubtract
-		riceMed.text = str(medAmt) + " lb."
+		riceMed.text = str(medAmt) + " x 2lb."
 			
-	if(size == "lrg" && smlAmt + addSubtract >= 0):
+	if(size == "lrg" && lrgAmt + addSubtract >= 0):
 		lrgAmt = lrgAmt + addSubtract
-		riceLrg.text = str(lrgAmt) + " lb."
+		riceLrg.text = str(lrgAmt) + " x 3lb."
 				
 		
 	pass	
@@ -46,8 +46,8 @@ func buyRice():
 		smlAmt = 0
 		medAmt = 0
 		lrgAmt = 0 
-		riceLrg.text = str(lrgAmt) + " lb."
-		
-	
+		riceLrg.text = str(lrgAmt) + " x 3lb."
+		riceMed.text = str(medAmt) + " x 2lb."
+		riceSml.text = str(smlAmt) + " lb."	
 func _Exit():
 	queue_free()
