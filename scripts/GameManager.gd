@@ -1,15 +1,15 @@
 extends Node
 #tracked vars
-var money
+var money 
 var popularity
 var days
 var currentDay
-var rice
-var seasoning
-var utensils
-var freshAhi
-var frozenAhi
-var location
+var rice = 0
+var seasoning = 0
+var utensils = 0
+var freshAhi = 0
+var frozenAhi = 0
+var location 
 var visitors
 var tourists
 var freshPrice
@@ -43,6 +43,7 @@ func ApplyVisitorCount():
 	#Events
 	if(event == 0 && location == 0): #Halloween Parade @ Waikiki
 		visitors = visitors * eventMod
+		
 	if(event == 1 && location == 3): #Eddie Would Go @ North Shore
 		visitors = visitors * eventMod
 	if(event == 2 && location == 0): #SpamFest @ Waikiki
@@ -94,9 +95,7 @@ func newDay():
 		print("No Event Today!")
 	
 
-func buyFish(var fresh, var frozen):
-	
-	pass
+
 func buyRice(var bag1, bag2, bag3):
 	pass
 func buySeasoning(var bag0, var bag1,var bag2):

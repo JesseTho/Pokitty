@@ -4,23 +4,55 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
-
+var freshahicart 
+var frozenahicart
+var freshamt = 0
+var frozenamt = 0
+#func buttonpress(var button):
+	#if(button):
+	#	freshahicart++
+	#else if (freshahi >= 0)
+	#	freshahicart--
+	
+	#buyahi(frozenahicart,freshahicart)
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	freshahicart = $"VBoxContainer/FreshAhi/BuyHBox/CurrentLabel"
+	frozenahicart = $"VBoxContainer/Frozen Ahi/BuyHBox/CurrentLabel"
 
-func buyAhi(var FrozenAmount, var FreshAmount):
-	var cost = (FrozenAmount * GameManager.frozenPrice) + (FreshAmount * GameManager.freshPrice)
+	# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _cartUpdate(var freshFrozen, var addSubtract):
+	
+	if(freshFrozen == true && freshamt + addSubtract >= 0): #1 is fresh
+		freshamt = freshamt + addSubtract
+		freshahicart.text = str(freshamt) + " lb."
+		
+		
+	if(freshFrozen == false	 && frozenamt + addSubtract >= 0 ): #0 is frozen
+		frozenamt = frozenamt + addSubtract
+		frozenahicart.text = str(frozenamt) + " lb."
+		
+		
+	pass	
+func buyAhi():
+	var cost = (frozenamt * GameManager.frozenPrice) + (freshamt * GameManager.freshPrice)
 	if(cost > GameManager.money):
+		
 		print("Can't Afford!")
 	else: #Can Afford?
 		GameManager.money = GameManager.money - cost
-		GameManager.frozenAhi = GameManager.frozenAhi + FrozenAmount
-		GameManager.freshAhi = GameManager.freshAhi + FreshAmount
-		SceneManager.LoadScene("5_Inventory")
+		GameManager.frozenAhi = GameManager.frozenAhi + frozenamt
+		GameManager.freshAhi = GameManager.freshAhi + freshamt
+		print("Bought: Fresh " + str(freshamt) + " lb.")
+		print("Bought: Frozen " + str(frozenamt) + " lb.")
+		print("Money left:$" + str(GameManager.money))
+		frozenamt = 0
+		freshamt = 0
+		freshahicart.text = str(freshamt) + " lb."
+		frozenahicart.text = str(frozenamt) + " lb."
+		
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _Exit():
+	queue_free()

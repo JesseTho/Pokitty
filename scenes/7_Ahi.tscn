@@ -36,14 +36,14 @@ margin_right = 650.0
 margin_bottom = 500.0
 custom_constants/separation = 15
 
-[node name="SmallOrder" type="ColorRect" parent="VBoxContainer"]
+[node name="FreshAhi" type="ColorRect" parent="VBoxContainer"]
 margin_right = 600.0
-margin_bottom = 106.0
+margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 1, 1, 1, 0.901961 )
 
-[node name="Label" type="Label" parent="VBoxContainer/SmallOrder"]
+[node name="Label" type="Label" parent="VBoxContainer/FreshAhi"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
@@ -51,9 +51,9 @@ margin_top = -7.0
 margin_right = 130.0
 margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 for 5 Lb."
+text = "Fresh Ahi "
 
-[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/SmallOrder"]
+[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/FreshAhi"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -64,14 +64,14 @@ margin_bottom = 10.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="SubtractButton" type="Button" parent="VBoxContainer/SmallOrder/BuyHBox"]
+[node name="SubtractButton" type="Button" parent="VBoxContainer/FreshAhi/BuyHBox"]
 margin_left = 30.0
 margin_right = 50.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 0 )
 text = "-"
 
-[node name="CurrentLabel" type="Label" parent="VBoxContainer/SmallOrder/BuyHBox"]
+[node name="CurrentLabel" type="Label" parent="VBoxContainer/FreshAhi/BuyHBox"]
 margin_left = 70.0
 margin_top = 3.0
 margin_right = 130.0
@@ -82,21 +82,21 @@ text = "0 lb."
 align = 1
 valign = 1
 
-[node name="AddButton" type="Button" parent="VBoxContainer/SmallOrder/BuyHBox"]
+[node name="AddButton" type="Button" parent="VBoxContainer/FreshAhi/BuyHBox"]
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="MediumOrder" type="ColorRect" parent="VBoxContainer"]
-margin_top = 121.0
+[node name="Frozen Ahi" type="ColorRect" parent="VBoxContainer"]
+margin_top = 182.0
 margin_right = 600.0
-margin_bottom = 228.0
+margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 1, 1, 1, 0.901961 )
 
-[node name="Label" type="Label" parent="VBoxContainer/MediumOrder"]
+[node name="Label" type="Label" parent="VBoxContainer/Frozen Ahi"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
@@ -104,9 +104,9 @@ margin_top = -7.0
 margin_right = 127.0
 margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 for 5 lb."
+text = "Frozen Ahi"
 
-[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/MediumOrder"]
+[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/Frozen Ahi"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -117,14 +117,14 @@ margin_bottom = 10.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="SubtractButton" type="Button" parent="VBoxContainer/MediumOrder/BuyHBox"]
+[node name="SubtractButton" type="Button" parent="VBoxContainer/Frozen Ahi/BuyHBox"]
 margin_left = 30.0
 margin_right = 50.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 0 )
 text = "-"
 
-[node name="CurrentLabel" type="Label" parent="VBoxContainer/MediumOrder/BuyHBox"]
+[node name="CurrentLabel" type="Label" parent="VBoxContainer/Frozen Ahi/BuyHBox"]
 margin_left = 70.0
 margin_top = 3.0
 margin_right = 130.0
@@ -135,13 +135,14 @@ text = "0 lb."
 align = 1
 valign = 1
 
-[node name="AddButton" type="Button" parent="VBoxContainer/MediumOrder/BuyHBox"]
+[node name="AddButton" type="Button" parent="VBoxContainer/Frozen Ahi/BuyHBox"]
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="BigOrder" type="ColorRect" parent="VBoxContainer"]
+[node name="Bulk Frozen" type="ColorRect" parent="VBoxContainer"]
+visible = false
 margin_top = 243.0
 margin_right = 600.0
 margin_bottom = 350.0
@@ -149,7 +150,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 1, 1, 1, 0.901961 )
 
-[node name="Label" type="Label" parent="VBoxContainer/BigOrder"]
+[node name="Label" type="Label" parent="VBoxContainer/Bulk Frozen"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
@@ -157,9 +158,9 @@ margin_top = -7.0
 margin_right = 131.0
 margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 per 5 lb."
+text = "Bulk Frozen"
 
-[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/BigOrder"]
+[node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/Bulk Frozen"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -170,14 +171,14 @@ margin_bottom = 10.0
 custom_constants/separation = 20
 alignment = 1
 
-[node name="SubtractButton" type="Button" parent="VBoxContainer/BigOrder/BuyHBox"]
+[node name="SubtractButton" type="Button" parent="VBoxContainer/Bulk Frozen/BuyHBox"]
 margin_left = 30.0
 margin_right = 50.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 0 )
 text = "-"
 
-[node name="CurrentLabel" type="Label" parent="VBoxContainer/BigOrder/BuyHBox"]
+[node name="CurrentLabel" type="Label" parent="VBoxContainer/Bulk Frozen/BuyHBox"]
 margin_left = 70.0
 margin_top = 3.0
 margin_right = 130.0
@@ -188,7 +189,7 @@ text = "0 lb."
 align = 1
 valign = 1
 
-[node name="AddButton" type="Button" parent="VBoxContainer/BigOrder/BuyHBox"]
+[node name="AddButton" type="Button" parent="VBoxContainer/Bulk Frozen/BuyHBox"]
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 20.0
@@ -270,3 +271,10 @@ margin_right = 692.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 155, 0 )
 text = "Buy"
+
+[connection signal="pressed" from="VBoxContainer/FreshAhi/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ true, -1 ]]
+[connection signal="pressed" from="VBoxContainer/FreshAhi/BuyHBox/AddButton" to="." method="_cartUpdate" binds= [ true, 1 ]]
+[connection signal="pressed" from="VBoxContainer/Frozen Ahi/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ false, -1 ]]
+[connection signal="pressed" from="VBoxContainer/Frozen Ahi/BuyHBox/AddButton" to="." method="_cartUpdate" binds= [ false, 1 ]]
+[connection signal="pressed" from="HBoxContainer/ReturnButton" to="." method="_Exit"]
+[connection signal="pressed" from="HBoxContainer/BuyButton" to="." method="buyAhi"]

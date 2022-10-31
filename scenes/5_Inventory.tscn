@@ -330,4 +330,5 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
 text = "+"
 
+[connection signal="pressed" from="VBoxContainer/Ahi/AhiStore" to="." method="loadPopup" binds= [ "7_Ahi" ]]
 [connection signal="pressed" from="VBoxContainer2/Price/OpenButton" to="." method="_on_Button_pressed" binds= [ "9_Truck" ]]

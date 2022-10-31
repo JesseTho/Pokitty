@@ -15,3 +15,5 @@ func _ready():
 func _on_Button_pressed(var SceneName):
 		SceneManager.LoadScene(SceneName)
 	
+func loadPopup(var SceneName):
+		SceneManager.LoadDialog(SceneName)
