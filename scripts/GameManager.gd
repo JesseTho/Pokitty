@@ -1,9 +1,9 @@
 extends Node
 #tracked vars
 var money 
-var popularity
-var days
-var currentDay
+var popularity = 0
+var days = 0
+var currentDay = 1
 var rice = 0
 var seasoning = 0
 var utensils = 0

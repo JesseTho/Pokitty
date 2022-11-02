@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/5_Inventory.gd" type="Script" id=1]
 [ext_resource path="res://images/bg.jpg" type="Texture" id=2]
@@ -9,11 +9,12 @@
 [ext_resource path="res://images/location_icon.png" type="Texture" id=7]
 [ext_resource path="res://styles/names.tres" type="DynamicFont" id=8]
 [ext_resource path="res://styles/titles.tres" type="DynamicFont" id=9]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 0.901961 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 120.0 ]
@@ -32,14 +33,7 @@ text = "Farmers Market"
 align = 1
 valign = 1
 
-[node name="GameStatus" type="Label" parent="Title"]
-margin_left = 133.0
-margin_top = 30.0
-margin_right = 268.0
-margin_bottom = 78.0
-text = "Day:
-Money:
-Likes:"
+[node name="GameStatus" parent="Title" instance=ExtResource( 10 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 20.0
