@@ -18,7 +18,7 @@ size = 17
 extra_spacing_char = 1
 font_data = ExtResource( 3 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 250.0 ],
@@ -58,3 +58,5 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "START"
 icon_align = 1
+
+[connection signal="pressed" from="IntroBg/Button" to="." method="_on_Button_pressed" binds= [ "2_Date" ]]
