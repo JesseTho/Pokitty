@@ -1,6 +1,117 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
+[ext_resource path="res://images/cat3.png" type="Texture" id=2]
+[ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
+[ext_resource path="res://images/cat2.png" type="Texture" id=4]
+[ext_resource path="res://images/cat4.png" type="Texture" id=5]
+[ext_resource path="res://images/cat1.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+extra_spacing_bottom = 8
+extra_spacing_char = 1
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="OpentruckBg" type="Sprite" parent="."]
+position = Vector2( 514, 301 )
+texture = ExtResource( 3 )
+
+[node name="Cat4" type="Sprite" parent="OpentruckBg"]
+position = Vector2( -324, 229 )
+scale = Vector2( 0.691617, 0.647619 )
+texture = ExtResource( 5 )
+
+[node name="Cat3" type="Sprite" parent="OpentruckBg"]
+position = Vector2( 30, 216 )
+scale = Vector2( 0.703593, 0.642857 )
+texture = ExtResource( 2 )
+
+[node name="Cat2" type="Sprite" parent="OpentruckBg"]
+position = Vector2( -103, 233 )
+scale = Vector2( 0.693114, 0.6 )
+texture = ExtResource( 4 )
+
+[node name="Cat1" type="Sprite" parent="OpentruckBg"]
+position = Vector2( -207, 211 )
+scale = Vector2( 0.654839, 0.690476 )
+texture = ExtResource( 6 )
+
+[node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
+margin_left = 195.0
+margin_top = -35.0
+margin_right = 409.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "SOLD 
+
+POKE BOWLS"
+align = 1
+valign = 1
+
+[node name="NumPokeBowls" type="Label" parent="OpentruckBg"]
+margin_left = 195.0
+margin_top = -35.0
+margin_right = 409.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "##"
+align = 1
+valign = 1
+
+[node name="FishLB" type="Label" parent="OpentruckBg"]
+margin_left = 230.0
+margin_top = 180.0
+margin_right = 298.0
+margin_bottom = 215.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "### lb
+"
+align = 1
+valign = 1
+
+[node name="ShoyuLB" type="Label" parent="OpentruckBg"]
+margin_left = 231.0
+margin_top = 245.0
+margin_right = 299.0
+margin_bottom = 280.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "### lb
+"
+align = 1
+valign = 1
+
+[node name="RiceLB" type="Label" parent="OpentruckBg"]
+margin_left = 395.0
+margin_top = 180.0
+margin_right = 463.0
+margin_bottom = 215.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "### lb
+"
+align = 1
+valign = 1
+
+[node name="Utensils" type="Label" parent="OpentruckBg"]
+margin_left = 395.0
+margin_top = 243.0
+margin_right = 463.0
+margin_bottom = 278.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "### Sets
+"
+align = 1
+valign = 1

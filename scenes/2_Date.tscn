@@ -1,55 +1,64 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/2_Date.gd" type="Script" id=1]
+[ext_resource path="res://images/bg.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/TangoSans_Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 512.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 299 )
+texture = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="Sprite"]
+margin_left = -458.0
+margin_top = -161.0
+margin_right = 460.0
+margin_bottom = -88.0
+custom_fonts/font = SubResource( 1 )
+text = "How many days would you like to operate your Poke Truck?"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="3Day" type="Button" parent="."]
-margin_left = 847.0
-margin_top = 88.0
-margin_right = 959.0
-margin_bottom = 185.0
-
-[node name="Label" type="Label" parent="3Day"]
-margin_left = 28.0
-margin_top = 28.0
-margin_right = 83.0
-margin_bottom = 70.0
-text = "3"
-align = 1
-valign = 1
+margin_left = 424.0
+margin_top = 250.0
+margin_right = 596.0
+margin_bottom = 307.0
+custom_fonts/font = SubResource( 2 )
+text = "3 Days"
 
 [node name="5Day" type="Button" parent="."]
-margin_left = 847.0
-margin_top = 265.0
-margin_right = 959.0
-margin_bottom = 362.0
+margin_left = 424.0
+margin_top = 338.0
+margin_right = 596.0
+margin_bottom = 395.0
+custom_fonts/font = SubResource( 2 )
+text = "5 Days"
 
-[node name="Label" type="Label" parent="5Day"]
-margin_left = 28.0
-margin_top = 28.0
-margin_right = 83.0
-margin_bottom = 70.0
-text = "5"
-align = 1
-valign = 1
-
-[node name="7Day" type="Button" parent="."]
-margin_left = 847.0
-margin_top = 456.0
-margin_right = 959.0
-margin_bottom = 553.0
-
-[node name="Label" type="Label" parent="7Day"]
-margin_left = 28.0
-margin_top = 28.0
-margin_right = 83.0
-margin_bottom = 70.0
-text = "7"
-align = 1
-valign = 1
+[node name="5Day2" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 426.0
+margin_right = 596.0
+margin_bottom = 483.0
+custom_fonts/font = SubResource( 2 )
+text = "7 Days"
 
 [connection signal="pressed" from="3Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
-[connection signal="pressed" from="5Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 5 ]]
-[connection signal="pressed" from="7Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 7 ]]
+[connection signal="pressed" from="5Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
+[connection signal="pressed" from="5Day2" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]

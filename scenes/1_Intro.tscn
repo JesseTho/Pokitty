@@ -1,61 +1,60 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/1_Intro.gd" type="Script" id=1]
-[ext_resource path="res://images/Screenshot_50.jpg" type="Texture" id=2]
+[ext_resource path="res://images/intro_bg.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/TangoSans.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 17
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 250.0 ],
+"_edit_vertical_guides_": [ 556.0 ]
+}
 
-[node name="Screenshot50" type="Sprite" parent="."]
-position = Vector2( 510.996, 297.5 )
-scale = Vector2( 0.815574, 0.815574 )
+[node name="IntroBg" type="Sprite" parent="."]
+position = Vector2( 514, 303 )
 texture = ExtResource( 2 )
 
-[node name="Title" type="Label" parent="."]
-visible = false
-margin_left = 552.0
-margin_top = 163.0
-margin_right = 996.0
-margin_bottom = 483.0
-text = "You are a feline parent with 12 hungry kittens to feed. To make money, you open a food truck that sells poke bowls made with your secret recipe. Can you survive the cutthroat competition of the food truck business?
+[node name="Title" type="Label" parent="IntroBg"]
+margin_left = 51.1498
+margin_top = -256.244
+margin_right = 282.15
+margin_bottom = -205.244
+custom_fonts/font = SubResource( 1 )
+text = "Poke Cat!"
+
+[node name="IntroText" type="Label" parent="IntroBg"]
+margin_left = 51.1498
+margin_top = -173.844
+margin_right = 472.15
+margin_bottom = 75.1558
+custom_fonts/font = SubResource( 2 )
+text = "You are a feline parent with 12 hungry kittens to feed. To make money, you open a food truck that sells your secret recipe poke bowls. Can you survive the cutthroat competition of the food truck business?
 
 To win, operate your food truck for 3, 5, or 7 days without running out of money. Buy supplies at the market. Sell poke bowls to gain money. Meet the customer’s quality demands to increase your popularity on Meowspace.
 "
 autowrap = true
 
-[node name="Label2" type="Label" parent="."]
-visible = false
-margin_left = 552.0
-margin_top = 76.0
-margin_right = 996.0
-margin_bottom = 396.0
-text = "Poke Cat"
-autowrap = true
-
-[node name="Button" type="Button" parent="."]
-margin_left = 564.0
-margin_top = 343.0
-margin_right = 737.0
-margin_bottom = 396.0
-custom_styles/normal = SubResource( 1 )
-
-[node name="Label" type="Label" parent="Button"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -55.0
-margin_top = -22.0
-margin_right = 57.0
-margin_bottom = 23.0
+[node name="Button" type="Button" parent="IntroBg"]
+margin_left = 57.0
+margin_top = 89.0
+margin_right = 206.0
+margin_bottom = 127.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "START"
-align = 1
-valign = 1
-
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed" binds= [ "2_Date" ]]
+icon_align = 1
