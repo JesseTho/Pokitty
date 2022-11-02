@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat-hiss.wav-dd240f1b97a37a0bb964fc16a0d9809d.sample"
+
+[deps]
+
+source_file="res://audio/cat-hiss.wav"
+dest_files=[ "res://.import/cat-hiss.wav-dd240f1b97a37a0bb964fc16a0d9809d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

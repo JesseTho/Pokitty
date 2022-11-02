@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/rice_bg.jpg" type="Texture" id=1]
 [ext_resource path="res://images/rice.png" type="Texture" id=2]
 [ext_resource path="res://images/pokebowl.png" type="Texture" id=3]
 [ext_resource path="res://scripts/6_Rice.gd" type="Script" id=4]
+[ext_resource path="res://styles/names2.tres" type="DynamicFont" id=5]
+[ext_resource path="res://styles/names.tres" type="DynamicFont" id=6]
+[ext_resource path="res://styles/titles.tres" type="DynamicFont" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -15,8 +18,8 @@ centered = false
 [node name="Title" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 100.0
-text = "Farmers Market
-Rice"
+custom_fonts/font = ExtResource( 7 )
+text = "Farmers Market"
 align = 1
 valign = 1
 
@@ -28,6 +31,15 @@ margin_bottom = 78.0
 text = "Day:
 Money:
 Likes:"
+
+[node name="Subtitle" type="Label" parent="Title"]
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 119.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Rice"
+align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 50.0
@@ -50,7 +62,8 @@ margin_left = 50.0
 margin_top = -7.0
 margin_right = 130.0
 margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
 text = "1lb for $5"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/SmallOrder"]
@@ -103,7 +116,8 @@ margin_left = 50.0
 margin_top = -7.0
 margin_right = 127.0
 margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
 text = "2lb for $8"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/MediumOrder"]
@@ -156,7 +170,8 @@ margin_left = 50.0
 margin_top = -7.0
 margin_right = 131.0
 margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
 text = "3lbs for $10"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/BigOrder"]
@@ -216,7 +231,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -79.0
 margin_bottom = -65.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
 text = "Poke Recipe"
 align = 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/5_Inventory.gd" type="Script" id=1]
 [ext_resource path="res://images/bg.jpg" type="Texture" id=2]
@@ -7,19 +7,11 @@
 [ext_resource path="res://images/fish.png" type="Texture" id=5]
 [ext_resource path="res://images/rice.png" type="Texture" id=6]
 [ext_resource path="res://images/location_icon.png" type="Texture" id=7]
-[ext_resource path="res://fonts/TangoSans_Bold.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=9]
-
-[sub_resource type="DynamicFont" id=1]
-size = 40
-font_data = ExtResource( 8 )
+[ext_resource path="res://styles/names.tres" type="DynamicFont" id=8]
+[ext_resource path="res://styles/titles.tres" type="DynamicFont" id=9]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 0.901961 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 28
-font_data = ExtResource( 9 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,7 +27,7 @@ centered = false
 margin_top = 3.0
 margin_right = 1024.0
 margin_bottom = 103.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 9 )
 text = "Farmers Market"
 align = 1
 valign = 1
@@ -83,10 +75,11 @@ texture = ExtResource( 5 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
-margin_top = -7.0
-margin_right = 230.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = -12.0
+margin_right = 237.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Ahi"
 
 [node name="Rice" type="ColorRect" parent="VBoxContainer"]
@@ -117,10 +110,11 @@ texture = ExtResource( 6 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
-margin_top = -7.0
-margin_right = 230.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = -12.0
+margin_right = 246.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Rice"
 
 [node name="Seasoning" type="ColorRect" parent="VBoxContainer"]
@@ -151,10 +145,11 @@ texture = ExtResource( 4 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
-margin_top = -7.0
-margin_right = 230.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = -12.0
+margin_right = 326.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Seasoning"
 
 [node name="BowlsUtensils" type="ColorRect" parent="VBoxContainer"]
@@ -185,10 +180,11 @@ texture = ExtResource( 3 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
-margin_top = -7.0
-margin_right = 230.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = -12.0
+margin_right = 404.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Bowls & Utensils"
 
 [node name="Location" type="ColorRect" parent="VBoxContainer"]
@@ -208,10 +204,11 @@ texture = ExtResource( 7 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
-margin_top = -7.0
-margin_right = 230.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = -12.0
+margin_right = 415.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Name of Location"
 
 [node name="LocationPrice" type="Label" parent="VBoxContainer/Location"]
@@ -242,8 +239,10 @@ color = Color( 1, 1, 1, 0.901961 )
 
 [node name="LocationName" type="Label" parent="VBoxContainer2/LocationStatus"]
 anchor_right = 1.0
-margin_bottom = 49.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = 1.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Name of Location"
 align = 1
 valign = 1
@@ -271,9 +270,9 @@ color = Color( 1, 1, 1, 0.901961 )
 
 [node name="SetPrice" type="Label" parent="VBoxContainer2/Price"]
 anchor_right = 1.0
-margin_bottom = 60.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Set Price of Poke Bowl"
 align = 1
 valign = 1
