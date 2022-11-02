@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/utensil_bg.jpg" type="Texture" id=1]
 [ext_resource path="res://images/pokebowl.png" type="Texture" id=2]
 [ext_resource path="res://images/bowl.png" type="Texture" id=3]
+[ext_resource path="res://scripts/9_Utensils.gd" type="Script" id=4]
+[ext_resource path="res://styles/names2.tres" type="DynamicFont" id=5]
+[ext_resource path="res://styles/names.tres" type="DynamicFont" id=6]
+[ext_resource path="res://styles/titles.tres" type="DynamicFont" id=7]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="UtensilBg" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -13,8 +18,8 @@ centered = false
 [node name="Title" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 100.0
-text = "Farmers Market
-Utensils"
+custom_fonts/font = ExtResource( 7 )
+text = "Farmers Market"
 align = 1
 valign = 1
 
@@ -26,6 +31,15 @@ margin_bottom = 78.0
 text = "Day:
 Money:
 Likes:"
+
+[node name="Subtitle" type="Label" parent="Title"]
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 119.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Ahi"
+align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 50.0
@@ -45,11 +59,12 @@ color = Color( 1, 1, 1, 0.901961 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
-margin_top = -7.0
-margin_right = 130.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 for 5 ct."
+margin_top = -11.0
+margin_right = 194.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "$5 for 20 ct"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/SmallOrder"]
 anchor_left = 1.0
@@ -98,11 +113,12 @@ color = Color( 1, 1, 1, 0.901961 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
-margin_top = -7.0
-margin_right = 127.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 for 5 ct."
+margin_top = -11.5
+margin_right = 201.0
+margin_bottom = 15.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "$8 for 50 ct."
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/MediumOrder"]
 anchor_left = 1.0
@@ -151,11 +167,12 @@ color = Color( 1, 1, 1, 0.901961 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
-margin_top = -7.0
-margin_right = 131.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$10 per 5 ct."
+margin_top = -11.5
+margin_right = 235.0
+margin_bottom = 15.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "$10 per 100 ct."
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/BigOrder"]
 anchor_left = 1.0
@@ -214,7 +231,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -79.0
 margin_bottom = -65.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
 text = "Poke Recipe"
 align = 1
 
@@ -268,3 +286,12 @@ margin_right = 692.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 155, 0 )
 text = "Buy"
+
+[connection signal="pressed" from="VBoxContainer/SmallOrder/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ "sml", -1 ]]
+[connection signal="pressed" from="VBoxContainer/SmallOrder/BuyHBox/AddButton" to="." method="_cartUpdate" binds= [ "sml", 1 ]]
+[connection signal="pressed" from="VBoxContainer/MediumOrder/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ "med", -1 ]]
+[connection signal="pressed" from="VBoxContainer/MediumOrder/BuyHBox/AddButton" to="." method="_cartUpdate" binds= [ "med", 1 ]]
+[connection signal="pressed" from="VBoxContainer/BigOrder/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ "lrg", -1 ]]
+[connection signal="pressed" from="VBoxContainer/BigOrder/BuyHBox/AddButton" to="." method="_cartUpdate" binds= [ "lrg", 1 ]]
+[connection signal="pressed" from="HBoxContainer/ReturnButton" to="." method="_Exit"]
+[connection signal="pressed" from="HBoxContainer/BuyButton" to="." method="_buy"]

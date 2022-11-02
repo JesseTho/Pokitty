@@ -28,20 +28,20 @@ func _cartUpdate(var size, var addSubtract):
 			
 	if(size == "lrg" && lrgAmt + addSubtract >= 0):
 		lrgAmt = lrgAmt + addSubtract
-		Lrg.text = str(lrgAmt) + " x 3lb."
+		Lrg.text = str(lrgAmt) + " x 3lb." 
 				
 		
 	pass	
-func buyRice():
-	var cost = (smlAmt * GameManager.ricePrices[0]) + (medAmt * GameManager.ricePrices[1] + (lrgAmt * GameManager.ricePrices[2]))
+func buyseasoning():
+	var cost = (smlAmt * GameManager.seasonPrices[0]) + (medAmt * GameManager.seasonPrices[1] + (lrgAmt * GameManager.seasonPrices[2]))
 	if(cost > GameManager.money):
 		
 		print("Can't Afford!")
 	else: #Can Afford?
-		GameManager.money = GameManager.money - cost # Subtracting Cost of Rice
-		GameManager.rice = GameManager.rice + (smlAmt * GameManager.riceAmt[0]) + (medAmt * GameManager.riceAmt[1]) + (lrgAmt * GameManager.riceAmt[2]) #Adding Rice to Inventory
-		print ("Bought; Rice " + str((smlAmt * GameManager.riceAmt[0]) + (medAmt * GameManager.riceAmt[1]) + (lrgAmt * GameManager.riceAmt[2])) + "lbs")
-		print ("Total Rice: " + str(GameManager.rice) + "lbs")
+		GameManager.money = GameManager.money - cost # Subtracting Cost of seasoning
+		GameManager.seasoning = GameManager.seasoning + (smlAmt * GameManager.seasonAmt[0]) + (medAmt * GameManager.seasonAmt[1]) + (lrgAmt * GameManager.seasonAmt[2]) #Adding seasoning to Inventory
+		print ("Bought; Seasoning " + str((smlAmt * GameManager.seasonAmt[0]) + (medAmt * GameManager.seasonAmt[1]) + (lrgAmt * GameManager.seasonAmt[2])) + "lbs")
+		print ("Total seasoning: " + str(GameManager.seasoning) + "lbs")
 		print("Money left:$" + str(GameManager.money))
 		smlAmt = 0
 		medAmt = 0

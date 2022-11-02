@@ -16,7 +16,7 @@ var freshPrice
 var frozenPrice
 var event
 var weather
-var bowlPrice
+var bowlPrice = 12  #starting bowl price
 
 #Game Balance 
 var startingMoney = 500 #starting money
@@ -28,12 +28,14 @@ var weatherName = ["Sunny","Cloudy","Rainy"]
 var visitorRNG = [30,100] #range of visitors in a day
 var locationName = ["Wakiki","Kalihi","Kaka'ako","North Shore"]
 var locationFee = [200,100,200,100] #Fee of Location
-var eventName = ["Halloween Parade", "Eddie Would Go", "Spam Fest"]
+var eventName = ["No Event Today","Halloween Parade", "Eddie Would Go", "Spam Fest"]
 var rangeNames = ["Low","Medium","High"]
 var eventMod = 2 #modifer for events if matching location
 var ricePrices = [5,8,10] 
 var riceAmt = [1,2,3] #Amount you can buy in lbs 
+var seasonPrices = [5,8,10] #prices for seasoning
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
+var utensilPrices = [5,8,10] 
 var utensilAmt = [20,50,100] #Amount of you can buy in Sets
 
 
@@ -41,12 +43,12 @@ var utensilAmt = [20,50,100] #Amount of you can buy in Sets
 func ApplyVisitorCount():
 	
 	#Events
-	if(event == 0 && location == 0): #Halloween Parade @ Waikiki
+	if(event == 1 && location == 0): #Halloween Parade @ Waikiki
 		visitors = visitors * eventMod
 		
-	if(event == 1 && location == 3): #Eddie Would Go @ North Shore
+	if(event == 2 && location == 3): #Eddie Would Go @ North Shore
 		visitors = visitors * eventMod
-	if(event == 2 && location == 0): #SpamFest @ Waikiki
+	if(event == 3 && location == 0): #SpamFest @ Waikiki
 		visitors = visitors * eventMod
 		
 	#TouristArea
@@ -85,13 +87,13 @@ func newDay():
 	#EVENTS
 	rng.randomize()
 	var eventToday = rng.randi_range(0,1)
-	if(eventToday):
+	if(eventToday == 1):
 		rng.randomize()
-		event = rng.randi_range(0,eventName.size()-1)
+		event = rng.randi_range(1,eventName.size()-1)
 		print("Today's Event: " + str(eventName[event])) 
 		
 	else:
-		event = null
+		event = 0
 		print("No Event Today!")
 	
 
