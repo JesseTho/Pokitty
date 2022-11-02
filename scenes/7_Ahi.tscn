@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/7_Ahi.gd" type="Script" id=1]
 [ext_resource path="res://images/ahi_bg.jpg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://styles/names2.tres" type="DynamicFont" id=5]
 [ext_resource path="res://styles/names.tres" type="DynamicFont" id=6]
 [ext_resource path="res://styles/titles.tres" type="DynamicFont" id=7]
+[ext_resource path="res://styles/whitebox.tres" type="StyleBox" id=8]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,15 +25,6 @@ text = "Farmers Market"
 align = 1
 valign = 1
 
-[node name="GameStatus" type="Label" parent="Title"]
-margin_left = 133.0
-margin_top = 30.0
-margin_right = 268.0
-margin_bottom = 78.0
-text = "Day:
-Money:
-Likes:"
-
 [node name="Subtitle" type="Label" parent="Title"]
 margin_top = 80.0
 margin_right = 1024.0
@@ -41,6 +34,8 @@ custom_fonts/font = ExtResource( 5 )
 text = "Ahi"
 align = 1
 
+[node name="GameStatus" parent="Title" instance=ExtResource( 9 )]
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 50.0
 margin_top = 150.0
@@ -48,12 +43,12 @@ margin_right = 650.0
 margin_bottom = 500.0
 custom_constants/separation = 15
 
-[node name="FreshAhi" type="ColorRect" parent="VBoxContainer"]
+[node name="FreshAhi" type="Panel" parent="VBoxContainer"]
 margin_right = 600.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/FreshAhi"]
 anchor_top = 0.5
@@ -101,13 +96,13 @@ margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="Frozen Ahi" type="ColorRect" parent="VBoxContainer"]
+[node name="Frozen Ahi" type="Panel" parent="VBoxContainer"]
 margin_top = 182.0
 margin_right = 600.0
 margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Frozen Ahi"]
 anchor_top = 0.5
@@ -155,14 +150,14 @@ margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="Bulk Frozen" type="ColorRect" parent="VBoxContainer"]
+[node name="Bulk Frozen" type="Panel" parent="VBoxContainer"]
 visible = false
 margin_top = 243.0
 margin_right = 600.0
 margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Bulk Frozen"]
 anchor_top = 0.5
@@ -209,12 +204,12 @@ margin_right = 170.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="Recipe" type="ColorRect" parent="."]
+[node name="Recipe" type="Panel" parent="."]
 margin_left = 700.0
 margin_top = 150.0
 margin_right = 974.0
 margin_bottom = 500.0
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 8 )
 
 [node name="Pokebowl" type="Sprite" parent="Recipe"]
 position = Vector2( 124, -28 )

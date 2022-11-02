@@ -9,10 +9,8 @@
 [ext_resource path="res://images/location_icon.png" type="Texture" id=7]
 [ext_resource path="res://styles/names.tres" type="DynamicFont" id=8]
 [ext_resource path="res://styles/titles.tres" type="DynamicFont" id=9]
-[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=10]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 0.901961 )
+[ext_resource path="res://styles/whitebox.tres" type="StyleBox" id=10]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=11]
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,7 +31,7 @@ text = "Farmers Market"
 align = 1
 valign = 1
 
-[node name="GameStatus" parent="Title" instance=ExtResource( 10 )]
+[node name="GameStatus" parent="Title" instance=ExtResource( 11 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 20.0
@@ -47,7 +45,7 @@ margin_right = 560.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="AhiStore" type="Button" parent="VBoxContainer/Ahi"]
 anchor_left = 1.0
@@ -65,24 +63,37 @@ position = Vector2( 80.25, 42 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 5 )
 
-[node name="AhiAmount" type="Label" parent="VBoxContainer/Ahi"]
+[node name="AhiLabel" type="Label" parent="VBoxContainer/Ahi"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
 margin_top = -12.0
 margin_right = 237.0
 margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 194 )
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Ahi"
 
-[node name="Rice" type="ColorRect" parent="VBoxContainer"]
+[node name="AhiAmount" type="Label" parent="VBoxContainer/Ahi"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 356.0
+margin_top = -12.0
+margin_right = 456.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 194 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "5 lb."
+
+[node name="Rice" type="Panel" parent="VBoxContainer"]
 margin_top = 95.0
 margin_right = 560.0
 margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="RiceStore" type="Button" parent="VBoxContainer/Rice"]
 anchor_left = 1.0
@@ -100,24 +111,37 @@ position = Vector2( 83.485, 41.5 )
 scale = Vector2( 0.355, 0.355 )
 texture = ExtResource( 6 )
 
-[node name="RiceAmount" type="Label" parent="VBoxContainer/Rice"]
+[node name="RiceLabel" type="Label" parent="VBoxContainer/Rice"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 190.0
 margin_top = -12.0
 margin_right = 246.0
 margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 99 )
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Rice"
 
-[node name="Seasoning" type="ColorRect" parent="VBoxContainer"]
+[node name="RiceAmount" type="Label" parent="VBoxContainer/Rice"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 356.0
+margin_top = -12.0
+margin_right = 456.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 99 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "5 lb."
+
+[node name="Seasoning" type="Panel" parent="VBoxContainer"]
 margin_top = 190.0
 margin_right = 560.0
 margin_bottom = 270.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="SeasoningStore" type="Button" parent="VBoxContainer/Seasoning"]
 anchor_left = 1.0
@@ -142,17 +166,30 @@ margin_left = 190.0
 margin_top = -12.0
 margin_right = 326.0
 margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 4 )
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Seasoning"
 
-[node name="BowlsUtensils" type="ColorRect" parent="VBoxContainer"]
+[node name="SeasoningAmount2" type="Label" parent="VBoxContainer/Seasoning"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 356.0
+margin_top = -12.0
+margin_right = 456.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, 4 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "5 lb."
+
+[node name="BowlsUtensils" type="Panel" parent="VBoxContainer"]
 margin_top = 285.0
 margin_right = 560.0
 margin_bottom = 365.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="BowlStore" type="Button" parent="VBoxContainer/BowlsUtensils"]
 anchor_left = 1.0
@@ -177,17 +214,30 @@ margin_left = 190.0
 margin_top = -12.0
 margin_right = 404.0
 margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, -91 )
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 8 )
-text = "Bowls & Utensils"
+text = "Utensils"
 
-[node name="Location" type="ColorRect" parent="VBoxContainer"]
+[node name="BowlsUtensilsAmount2" type="Label" parent="VBoxContainer/BowlsUtensils"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 356.0
+margin_top = -12.0
+margin_right = 456.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 48, -91 )
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "5 sets"
+
+[node name="Location" type="Panel" parent="VBoxContainer"]
 margin_top = 380.0
 margin_right = 560.0
 margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="LocationIcon" type="Sprite" parent="VBoxContainer/Location"]
 position = Vector2( 76, 38.75 )
@@ -203,7 +253,7 @@ margin_right = 415.0
 margin_bottom = 15.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 8 )
-text = "Name of Location"
+text = "Location Fee"
 
 [node name="LocationPrice" type="Label" parent="VBoxContainer/Location"]
 anchor_left = 1.0
@@ -224,12 +274,12 @@ margin_right = 1004.0
 margin_bottom = 580.0
 custom_constants/separation = 15
 
-[node name="LocationStatus" type="ColorRect" parent="VBoxContainer2"]
+[node name="LocationStatus" type="Panel" parent="VBoxContainer2"]
 margin_right = 404.0
 margin_bottom = 222.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="LocationName" type="Label" parent="VBoxContainer2/LocationStatus"]
 anchor_right = 1.0
@@ -254,13 +304,13 @@ Today's Weather:
 Today's Visitor Traffic:
 Today's Event:"
 
-[node name="Price" type="ColorRect" parent="VBoxContainer2"]
+[node name="Price" type="Panel" parent="VBoxContainer2"]
 margin_top = 237.0
 margin_right = 404.0
 margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 1, 1, 0.901961 )
+custom_styles/panel = ExtResource( 10 )
 
 [node name="SetPrice" type="Label" parent="VBoxContainer2/Price"]
 anchor_right = 1.0
@@ -270,6 +320,9 @@ custom_fonts/font = ExtResource( 8 )
 text = "Set Price of Poke Bowl"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="OpenButton" type="Button" parent="VBoxContainer2/Price"]
 anchor_left = 0.5
