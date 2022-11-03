@@ -1,13 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
-[ext_resource path="res://images/cat3.png" type="Texture" id=2]
 [ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
-[ext_resource path="res://images/cat2.png" type="Texture" id=4]
-[ext_resource path="res://images/cat4.png" type="Texture" id=5]
-[ext_resource path="res://images/cat1.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://scenes/Cat.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -20,82 +15,14 @@ font_data = ExtResource( 7 )
 
 [node name="Truck" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 579.0, 492.0 ],
+"_edit_vertical_guides_": [ 633.0, 29.0 ]
+}
 
 [node name="OpentruckBg" type="Sprite" parent="."]
 position = Vector2( 514, 301 )
 texture = ExtResource( 3 )
-
-[node name="Root1" type="Node2D" parent="OpentruckBg"]
-
-[node name="Cat1" type="Sprite" parent="OpentruckBg/Root1"]
-position = Vector2( -207, 211 )
-scale = Vector2( 0.654839, 0.690476 )
-texture = ExtResource( 6 )
-script = ExtResource( 8 )
-
-[node name="startPos" type="Node2D" parent="OpentruckBg/Root1"]
-position = Vector2( -233, 434 )
-scale = Vector2( 0.654839, 0.690476 )
-
-[node name="endPos" type="Node2D" parent="OpentruckBg/Root1"]
-position = Vector2( -207, 211 )
-scale = Vector2( 0.654839, 0.690476 )
-
-[node name="Tween" type="Tween" parent="OpentruckBg/Root1"]
-
-[node name="Root2" type="Node2D" parent="OpentruckBg"]
-
-[node name="Cat2" type="Sprite" parent="OpentruckBg/Root2"]
-position = Vector2( -103, 233 )
-scale = Vector2( 0.693114, 0.6 )
-texture = ExtResource( 4 )
-script = ExtResource( 8 )
-
-[node name="startPos" type="Node2D" parent="OpentruckBg/Root2"]
-position = Vector2( -94, 434 )
-scale = Vector2( 0.693114, 0.6 )
-
-[node name="endPos" type="Node2D" parent="OpentruckBg/Root2"]
-position = Vector2( -103, 233 )
-scale = Vector2( 0.693114, 0.6 )
-
-[node name="Tween" type="Tween" parent="OpentruckBg/Root2"]
-
-[node name="Root3" type="Node2D" parent="OpentruckBg"]
-
-[node name="Cat3" type="Sprite" parent="OpentruckBg/Root3"]
-position = Vector2( 30, 216 )
-scale = Vector2( 0.703593, 0.642857 )
-texture = ExtResource( 2 )
-script = ExtResource( 8 )
-
-[node name="startPos" type="Node2D" parent="OpentruckBg/Root3"]
-position = Vector2( 30, 434 )
-scale = Vector2( 0.703593, 0.642857 )
-
-[node name="endPos" type="Node2D" parent="OpentruckBg/Root3"]
-position = Vector2( 30, 216 )
-scale = Vector2( 0.703593, 0.642857 )
-
-[node name="Tween" type="Tween" parent="OpentruckBg/Root3"]
-
-[node name="Root4" type="Node2D" parent="OpentruckBg"]
-
-[node name="Cat4" type="Sprite" parent="OpentruckBg/Root4"]
-position = Vector2( -324, 229 )
-scale = Vector2( 0.691617, 0.647619 )
-texture = ExtResource( 5 )
-script = ExtResource( 8 )
-
-[node name="startPos" type="Node2D" parent="OpentruckBg/Root4"]
-position = Vector2( -356, 434 )
-scale = Vector2( 0.691617, 0.647619 )
-
-[node name="endPos" type="Node2D" parent="OpentruckBg/Root4"]
-position = Vector2( -324, 229 )
-scale = Vector2( 0.691617, 0.647619 )
-
-[node name="Tween" type="Tween" parent="OpentruckBg/Root4"]
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
 margin_left = 195.0
@@ -179,6 +106,13 @@ text = "### Sets
 "
 align = 1
 valign = 1
+
+[node name="endPos" type="Panel" parent="OpentruckBg"]
+modulate = Color( 0, 0, 0, 0.227451 )
+margin_left = -199.0
+margin_top = 176.0
+margin_right = 98.0
+margin_bottom = 232.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

@@ -4,8 +4,9 @@ var CurrentTime = 8
 var amPM = 0
 onready var timer = get_node("Timer")
 onready var catTimer = get_node("CatTimer")
-var currentCat = 1
-var Cats = [$OpentruckBg/Root1/Cat1,$OpentruckBg/Root2/Cat2,$OpentruckBg/Root3/Cat3,$OpentruckBg/Root4/Cat4]
+var cat 
+
+
 
 var pokeSold = 0
 var thread
@@ -37,14 +38,9 @@ func StartDay():
 
 		
 func CatsBuy():
-	print("trying to buy")
-	
-	if(currentCat > 4):
-		currentCat = 1
-	else:
-		currentCat+=1
-	
-	
+	cat = load("res://prefab/Cat.tscn").instance()
+	get_node("OpentruckBg").add_child(cat)
+	print("Spawning a Cat")
 	
 			
 	
