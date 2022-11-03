@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
+[ext_resource path="res://skybox.png" type="Texture" id=2]
 [ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/DayTimer.gd" type="Script" id=4]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -108,17 +110,39 @@ align = 1
 valign = 1
 
 [node name="endPos" type="Panel" parent="OpentruckBg"]
-modulate = Color( 0, 0, 0, 0.227451 )
+modulate = Color( 0, 0, 0, 0 )
 margin_left = -199.0
 margin_top = 176.0
 margin_right = 98.0
 margin_bottom = 232.0
 
+[node name="CheckButton" type="CheckButton" parent="OpentruckBg"]
+margin_left = 206.0
+margin_top = 95.0
+margin_right = 282.0
+margin_bottom = 135.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+script = ExtResource( 4 )
 
 [node name="CatTimer" type="Timer" parent="."]
 
+[node name="Day" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.182305, 0.18906, 0.191406, 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 518, 762 )
+scale = Vector2( 1.37691, 1.37691 )
+texture = ExtResource( 2 )
+texture_scale = 1.47
+
+[connection signal="toggled" from="OpentruckBg/CheckButton" to="." method="FastForward"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CatTimer" to="." method="CatsBuy"]
+[connection signal="timeout" from="Day" to="." method="_Day"]

@@ -5,7 +5,6 @@ extends Sprite
 # var a = 2
 # var b = "text"
 onready var rng = RandomNumberGenerator.new()
-
 var startPos
 
 var endPosx 
@@ -14,6 +13,8 @@ var endPos
 
 
 func _ready():
+	rng.randomize()
+	self.texture = load("res://images/cat" + str(rng.randi_range(1,4)) + ".png")
 	
 	rng.randomize()
 	startPos = Vector2(rng.randf_range(-1024,1024), get_viewport().size.y+100)
