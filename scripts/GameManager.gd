@@ -3,7 +3,7 @@ extends Node
 var money 
 var popularity = 0
 var days = 0
-var currentDay = 1
+var currentDay = 0
 var rice = 0
 var seasoning = 0
 var utensils = 0
@@ -60,6 +60,9 @@ func ApplyVisitorCount():
 
 #Day Stats Caculated in 4_News	
 func newDay():
+	#New Day!
+	currentDay+=1
+	
 	var rng = RandomNumberGenerator.new()
 	#WEATEHR 
 	
