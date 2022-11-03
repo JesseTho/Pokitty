@@ -14,7 +14,7 @@ size = 32
 extra_spacing_char = 1
 font_data = ExtResource( 3 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D5" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 512.0 ]
@@ -51,7 +51,7 @@ margin_bottom = 395.0
 custom_fonts/font = SubResource( 2 )
 text = "5 Days"
 
-[node name="5Day2" type="Button" parent="."]
+[node name="7Day" type="Button" parent="."]
 margin_left = 424.0
 margin_top = 426.0
 margin_right = 596.0
@@ -60,5 +60,5 @@ custom_fonts/font = SubResource( 2 )
 text = "7 Days"
 
 [connection signal="pressed" from="3Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
-[connection signal="pressed" from="5Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
-[connection signal="pressed" from="5Day2" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]
+[connection signal="pressed" from="5Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 5 ]]
+[connection signal="pressed" from="7Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 7 ]]

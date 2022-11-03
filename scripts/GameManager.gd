@@ -62,7 +62,7 @@ func ApplyVisitorCount():
 func newDay():
 	#New Day!
 	currentDay+=1
-	
+	print("Day:"+str(currentDay) + " of " + str(days))
 	var rng = RandomNumberGenerator.new()
 	#WEATEHR 
 	
