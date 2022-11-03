@@ -87,7 +87,7 @@ func UpdateTime():
 		$OpentruckBg/Time.text = str(CurrentTime) + ":00PM"
 		
 	
-	elif(CurrentTime <= 8 && amPM == 1):
+	elif(CurrentTime <= 8 && amPM == 1 ):
 		$OpentruckBg/Time.text = str(CurrentTime) + ":00PM"
 		CurrentTime+=1
 		
