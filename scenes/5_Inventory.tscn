@@ -42,7 +42,7 @@ custom_constants/separation = 15
 
 [node name="Ahi" type="Panel" parent="VBoxContainer"]
 margin_right = 560.0
-margin_bottom = 80.0
+margin_bottom = 103.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 10 )
@@ -88,9 +88,9 @@ custom_fonts/font = ExtResource( 8 )
 text = "5 lb."
 
 [node name="Rice" type="Panel" parent="VBoxContainer"]
-margin_top = 95.0
+margin_top = 118.0
 margin_right = 560.0
-margin_bottom = 175.0
+margin_bottom = 222.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 10 )
@@ -136,9 +136,9 @@ custom_fonts/font = ExtResource( 8 )
 text = "5 lb."
 
 [node name="Seasoning" type="Panel" parent="VBoxContainer"]
-margin_top = 190.0
+margin_top = 237.0
 margin_right = 560.0
-margin_bottom = 270.0
+margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 10 )
@@ -184,9 +184,9 @@ custom_fonts/font = ExtResource( 8 )
 text = "5 lb."
 
 [node name="BowlsUtensils" type="Panel" parent="VBoxContainer"]
-margin_top = 285.0
+margin_top = 356.0
 margin_right = 560.0
-margin_bottom = 365.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 10 )
@@ -232,6 +232,7 @@ custom_fonts/font = ExtResource( 8 )
 text = "5 sets"
 
 [node name="Location" type="Panel" parent="VBoxContainer"]
+visible = false
 margin_top = 380.0
 margin_right = 560.0
 margin_bottom = 460.0
