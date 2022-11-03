@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
 [ext_resource path="res://skybox.png" type="Texture" id=2]
 [ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/DayTimer.gd" type="Script" id=4]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/Cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -27,6 +29,9 @@ position = Vector2( 518, 762 )
 scale = Vector2( 1.37691, 1.37691 )
 texture = ExtResource( 2 )
 texture_scale = 1.47
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.182305, 0.18906, 0.191406, 1 )
 
 [node name="OpentruckBg" type="Sprite" parent="."]
 position = Vector2( 514, 301 )
@@ -138,6 +143,8 @@ margin_top = 78.0
 margin_right = -322.0
 margin_bottom = 118.0
 
+[node name="Cat1" parent="OpentruckBg" instance=ExtResource( 6 )]
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
@@ -149,8 +156,7 @@ script = ExtResource( 4 )
 wait_time = 0.1
 autostart = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.182305, 0.18906, 0.191406, 1 )
+[node name="GameStatus" parent="." instance=ExtResource( 5 )]
 
 [connection signal="toggled" from="OpentruckBg/CheckButton" to="." method="FastForward"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

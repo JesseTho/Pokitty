@@ -34,7 +34,7 @@ func _ready():
 		print("bought fresh poke!")
 		GameManager.popularity+=1
 		GameManager.pokeSold+=1
-		get_node("NumPokeBowls").text = str(GameManager.pokeSold)
+		
 		print(":)") 
 		
 		
@@ -43,7 +43,7 @@ func _ready():
 		if(GameManager.location != 1 || GameManager.location != 2): #check for location with higher standards
 			GameManager.popularity+=1
 			GameManager.pokeSold+=1
-			get_node("NumPokeBowls").text = str(GameManager.pokeSold)
+			
 			print(":)")
 		else:
 			print(":|")

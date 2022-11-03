@@ -49,6 +49,7 @@ func buyseasoning():
 		Lrg.text = str(lrgAmt) + " lb."
 		Med.text = str(medAmt) + " lb."
 		Sml.text = str(smlAmt) + " lb."	
+		queue_free()
 		
 func _Exit():
 	queue_free()

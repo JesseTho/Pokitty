@@ -42,7 +42,7 @@ func buyAhi():
 		freshamt = 0
 		freshahicart.text = str(freshamt) + " lb."
 		frozenahicart.text = str(frozenamt) + " lb."
-		
+		queue_free()
 	
 func _Exit():
 	queue_free()

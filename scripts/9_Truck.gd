@@ -35,8 +35,13 @@ func _ready():
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	$OpentruckBg/FishLB.text = str(GameManager.freshAhi + GameManager.frozenAhi) + " lbs"
+	$OpentruckBg/ShoyuLB.text = str(GameManager.seasoning)  + " lbs"
+	$OpentruckBg/RiceLB.text = str(GameManager.rice)  + " lbs"
+	$OpentruckBg/Utensils.text = str(GameManager.utensils) + " sets"
+	$OpentruckBg/NumPokeBowls.text = str(GameManager.pokeSold)
+	
 func _Day():
 	$Light2D.rotation_degrees = $Light2D.rotation_degrees + 0.6
 	

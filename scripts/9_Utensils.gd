@@ -49,6 +49,7 @@ func _buy():
 		Lrg.text = str(lrgAmt) + " ct."
 		Med.text = str(medAmt) + " ct."
 		Sml.text = str(smlAmt) + " ct."	
+		queue_free()
 		
 func _Exit():
 	queue_free()
