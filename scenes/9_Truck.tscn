@@ -68,10 +68,10 @@ align = 2
 valign = 1
 
 [node name="FF" type="Label" parent="OpentruckBg"]
-margin_left = 195.0
-margin_top = 96.0
-margin_right = 230.0
-margin_bottom = 142.0
+margin_left = -415.0
+margin_top = 79.0
+margin_right = -380.0
+margin_bottom = 125.0
 custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 1 )
 text = ">>"
@@ -133,10 +133,10 @@ margin_right = 98.0
 margin_bottom = 232.0
 
 [node name="CheckButton" type="CheckButton" parent="OpentruckBg"]
-margin_left = 212.0
-margin_top = 95.0
-margin_right = 288.0
-margin_bottom = 135.0
+margin_left = -398.0
+margin_top = 78.0
+margin_right = -322.0
+margin_bottom = 118.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
