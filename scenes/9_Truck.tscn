@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
 [ext_resource path="res://images/cat3.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://images/cat4.png" type="Texture" id=5]
 [ext_resource path="res://images/cat1.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/Cat.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -17,32 +18,84 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 7 )
 
-[node name="Node2D4" type="Node2D"]
+[node name="Truck" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="OpentruckBg" type="Sprite" parent="."]
 position = Vector2( 514, 301 )
 texture = ExtResource( 3 )
 
-[node name="Cat4" type="Sprite" parent="OpentruckBg"]
-position = Vector2( -324, 229 )
-scale = Vector2( 0.691617, 0.647619 )
-texture = ExtResource( 5 )
+[node name="Root1" type="Node2D" parent="OpentruckBg"]
 
-[node name="Cat3" type="Sprite" parent="OpentruckBg"]
-position = Vector2( 30, 216 )
-scale = Vector2( 0.703593, 0.642857 )
-texture = ExtResource( 2 )
-
-[node name="Cat2" type="Sprite" parent="OpentruckBg"]
-position = Vector2( -103, 233 )
-scale = Vector2( 0.693114, 0.6 )
-texture = ExtResource( 4 )
-
-[node name="Cat1" type="Sprite" parent="OpentruckBg"]
+[node name="Cat1" type="Sprite" parent="OpentruckBg/Root1"]
 position = Vector2( -207, 211 )
 scale = Vector2( 0.654839, 0.690476 )
 texture = ExtResource( 6 )
+script = ExtResource( 8 )
+
+[node name="startPos" type="Node2D" parent="OpentruckBg/Root1"]
+position = Vector2( -233, 434 )
+scale = Vector2( 0.654839, 0.690476 )
+
+[node name="endPos" type="Node2D" parent="OpentruckBg/Root1"]
+position = Vector2( -207, 211 )
+scale = Vector2( 0.654839, 0.690476 )
+
+[node name="Tween" type="Tween" parent="OpentruckBg/Root1"]
+
+[node name="Root2" type="Node2D" parent="OpentruckBg"]
+
+[node name="Cat2" type="Sprite" parent="OpentruckBg/Root2"]
+position = Vector2( -103, 233 )
+scale = Vector2( 0.693114, 0.6 )
+texture = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="startPos" type="Node2D" parent="OpentruckBg/Root2"]
+position = Vector2( -94, 434 )
+scale = Vector2( 0.693114, 0.6 )
+
+[node name="endPos" type="Node2D" parent="OpentruckBg/Root2"]
+position = Vector2( -103, 233 )
+scale = Vector2( 0.693114, 0.6 )
+
+[node name="Tween" type="Tween" parent="OpentruckBg/Root2"]
+
+[node name="Root3" type="Node2D" parent="OpentruckBg"]
+
+[node name="Cat3" type="Sprite" parent="OpentruckBg/Root3"]
+position = Vector2( 30, 216 )
+scale = Vector2( 0.703593, 0.642857 )
+texture = ExtResource( 2 )
+script = ExtResource( 8 )
+
+[node name="startPos" type="Node2D" parent="OpentruckBg/Root3"]
+position = Vector2( 30, 434 )
+scale = Vector2( 0.703593, 0.642857 )
+
+[node name="endPos" type="Node2D" parent="OpentruckBg/Root3"]
+position = Vector2( 30, 216 )
+scale = Vector2( 0.703593, 0.642857 )
+
+[node name="Tween" type="Tween" parent="OpentruckBg/Root3"]
+
+[node name="Root4" type="Node2D" parent="OpentruckBg"]
+
+[node name="Cat4" type="Sprite" parent="OpentruckBg/Root4"]
+position = Vector2( -324, 229 )
+scale = Vector2( 0.691617, 0.647619 )
+texture = ExtResource( 5 )
+script = ExtResource( 8 )
+
+[node name="startPos" type="Node2D" parent="OpentruckBg/Root4"]
+position = Vector2( -356, 434 )
+scale = Vector2( 0.691617, 0.647619 )
+
+[node name="endPos" type="Node2D" parent="OpentruckBg/Root4"]
+position = Vector2( -324, 229 )
+scale = Vector2( 0.691617, 0.647619 )
+
+[node name="Tween" type="Tween" parent="OpentruckBg/Root4"]
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
 margin_left = 195.0
@@ -64,7 +117,7 @@ margin_right = 409.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "##"
+text = "0"
 align = 1
 valign = 1
 
@@ -128,7 +181,10 @@ align = 1
 valign = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 5.0
 autostart = true
 
+[node name="CatTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="CatTimer" to="." method="CatsBuy"]

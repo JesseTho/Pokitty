@@ -17,6 +17,7 @@ var frozenPrice
 var event
 var weather
 var bowlPrice = 12  #starting bowl price
+var pokeSold = 0
 
 #Game Balance 
 var startingMoney = 500 #starting money
@@ -25,8 +26,8 @@ var fishPriceMod = 1.25 #how much more is fresh fish compared to frozen
 var weatherMod = [1.5,1,0.5] #how weather effects visitors
 var touristMod = [0.5,1,2] #Tourist Modifier
 var weatherName = ["Sunny","Cloudy","Rainy"]
-var visitorRNG = [30,100] #range of visitors in a day
-var locationName = ["Wakiki","Kalihi","Kaka'ako","North Shore"]
+var visitorRNG = [12,50] #range of visitors in a day
+var locationName = ["Wakiki","Kalihi","Pearl City","North Shore"]
 var locationFee = [200,100,200,100] #Fee of Location
 var eventName = ["No Event Today","Halloween Parade", "Eddie Would Go", "Spam Fest"]
 var rangeNames = ["Low","Medium","High"]
@@ -57,6 +58,9 @@ func ApplyVisitorCount():
 		
 	#Weather
 	visitors = int(visitors * weatherMod[weather]) #forces visitor to 
+	
+	if(visitors < visitorRNG[0]): #sets min visitors per day to 1 (1 per hour)
+		visitors = visitorRNG[0]
 
 #Day Stats Caculated in 4_News	
 func newDay():
@@ -101,12 +105,28 @@ func newDay():
 	
 
 
-func buyRice(var bag1, bag2, bag3):
-	pass
-func buySeasoning(var bag0, var bag1,var bag2):
-	pass
-func buyUtensil(var set20, var set50, var set100):
-	pass
+func buyFresh():
+	if(freshAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25):
+		freshAhi-=0.5
+		rice-=0.5
+		utensils-=1
+		seasoning-=0.25
+		money = money+bowlPrice
+		return true ## 
+	else:
+		return false
+	
+func buyFrozen():
+	if(frozenAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25):
+		frozenAhi-=0.5
+		rice-=0.5
+		utensils-=1
+		seasoning-=0.25
+		money = money+bowlPrice
+		return true	
+	else:
+		return false
+	
 func _ready():
 	pass
 
