@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/2_Date.gd" type="Script" id=1]
 [ext_resource path="res://images/bg.jpg" type="Texture" id=2]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/TangoSans_Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://styles/orangebutton.tres" type="StyleBox" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 29
@@ -41,6 +42,7 @@ margin_top = 250.0
 margin_right = 596.0
 margin_bottom = 307.0
 custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 5 )
 text = "3 Days"
 
 [node name="5Day" type="Button" parent="."]
@@ -49,6 +51,7 @@ margin_top = 338.0
 margin_right = 596.0
 margin_bottom = 395.0
 custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 5 )
 text = "5 Days"
 
 [node name="7Day" type="Button" parent="."]
@@ -57,6 +60,7 @@ margin_top = 426.0
 margin_right = 596.0
 margin_bottom = 483.0
 custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 5 )
 text = "7 Days"
 
 [connection signal="pressed" from="3Day" to="." method="_on_Button_pressed" binds= [ "3_Location", 3 ]]

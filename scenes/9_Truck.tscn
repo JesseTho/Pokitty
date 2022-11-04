@@ -8,7 +8,6 @@
 [ext_resource path="res://prefab/Cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 30
 extra_spacing_bottom = 8
