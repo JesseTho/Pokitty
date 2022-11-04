@@ -43,6 +43,7 @@ var buyRange = 12
 var freshMod = 1.2
 var touristPriceMod =  1.6
 var locationPriceMod = [1.5,1,0.9,1.1]
+var locationExpectationNames = ["Low", "Moderate", "High", "Moderate"]
 var touristlocationMod = [1,0,0,1]
 var popularityMod = 1 + (popularity * 0.001)
 

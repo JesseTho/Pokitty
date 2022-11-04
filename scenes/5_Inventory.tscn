@@ -154,7 +154,7 @@ custom_styles/normal = ExtResource( 13 )
 text = "Store"
 
 [node name="Rice" type="Sprite" parent="VBoxContainer/Rice"]
-position = Vector2( 83.485, 41.5 )
+position = Vector2( 83.485, 51.5 )
 scale = Vector2( 0.355, 0.355 )
 texture = ExtResource( 6 )
 
@@ -209,7 +209,7 @@ custom_styles/normal = ExtResource( 13 )
 text = "Store"
 
 [node name="Seasoning" type="Sprite" parent="VBoxContainer/Seasoning"]
-position = Vector2( 79.25, 41.5693 )
+position = Vector2( 79.25, 51.5693 )
 scale = Vector2( 0.390511, 0.390511 )
 texture = ExtResource( 4 )
 
@@ -264,7 +264,7 @@ custom_styles/normal = ExtResource( 13 )
 text = "Store"
 
 [node name="Bowl" type="Sprite" parent="VBoxContainer/BowlsUtensils"]
-position = Vector2( 80.3148, 41 )
+position = Vector2( 80.3148, 51 )
 scale = Vector2( 0.395062, 0.395062 )
 texture = ExtResource( 3 )
 

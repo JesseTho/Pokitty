@@ -61,7 +61,7 @@ margin_right = 194.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$5 for 20 ct"
+text = "$5 for 20 sets"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/SmallOrder"]
 anchor_left = 1.0
@@ -116,7 +116,7 @@ margin_right = 201.0
 margin_bottom = 15.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$8 for 50 ct."
+text = "$8 for 50 sets"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/MediumOrder"]
 anchor_left = 1.0
@@ -171,7 +171,7 @@ margin_right = 235.0
 margin_bottom = 15.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$10 per 100 ct."
+text = "$10 per 100 sets"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/BigOrder"]
 anchor_left = 1.0
