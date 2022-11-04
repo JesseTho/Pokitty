@@ -10,21 +10,22 @@ func _ready(): #New Day Begins
 	$HBoxContainer/Popup/HBoxContainer/Weather/AnimatedSprite.frame = GameManager.weather
 	$HBoxContainer/Popup/HBoxContainer/Visitor/CurrentVisitors.text = GameManager.rangeNames[GameManager.tourists]
 	
-	var onethird = (GameManager.fishPriceRNG[1] - GameManager.fishPriceRNG[0])/3
-	var priceCategory
-	
-	if (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird):
-		priceCategory = 0 #low
-	elif (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird + onethird):
-		priceCategory = 1 #medium
-	else:
-		priceCategory = 2 #high
-	
+	var priceCategory = _getPriceCategory()
 	print("frozen:" + str(GameManager.frozenPrice))
 	print("priceCategory " + str(priceCategory))
-	
 	$HBoxContainer/Popup/HBoxContainer/FishPrice/AnimatedSprite.frame = priceCategory
 	$HBoxContainer/Popup/HBoxContainer/FishPrice/CurrentPrice.text = GameManager.rangeNames[priceCategory]
 	
 func _on_Button_pressed():
 	queue_free() #closes the news.
+	
+	# should this be in the Game Manager?
+func _getPriceCategory():
+	var onethird = (GameManager.fishPriceRNG[1] - GameManager.fishPriceRNG[0])/3
+	
+	if (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird):
+		return 0 #low
+	elif (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird + onethird):
+		return 1 #medium
+	else:
+		return 2 #high
