@@ -1,0 +1,235 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://images/bowl.png" type="Texture" id=1]
+[ext_resource path="res://styles/names2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/seasoning.png" type="Texture" id=4]
+[ext_resource path="res://images/rice.png" type="Texture" id=5]
+[ext_resource path="res://images/fish.png" type="Texture" id=6]
+[ext_resource path="res://images/bg.jpg" type="Texture" id=7]
+[ext_resource path="res://styles/titles.tres" type="DynamicFont" id=8]
+[ext_resource path="res://styles/whitebox.tres" type="StyleBox" id=9]
+[ext_resource path="res://styles/names3.tres" type="DynamicFont" id=10]
+[ext_resource path="res://styles/orangebutton.tres" type="StyleBox" id=11]
+[ext_resource path="res://styles/buttontext.tres" type="DynamicFont" id=12]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bg" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Title" type="Label" parent="."]
+margin_top = 3.0
+margin_right = 1024.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 8 )
+text = "Remaining Inventory"
+align = 1
+valign = 1
+
+[node name="GameStatus" parent="Title" instance=ExtResource( 3 )]
+
+[node name="GoneBad" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 123.0
+margin_right = 1024.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Your fresh ahi has gone bad."
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 211.0
+margin_right = 999.0
+margin_bottom = 461.0
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 477.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Ahi" type="Panel" parent="HBoxContainer/VBoxContainer"]
+margin_right = 477.0
+margin_bottom = 115.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+
+[node name="Fish" type="Sprite" parent="HBoxContainer/VBoxContainer/Ahi"]
+position = Vector2( 62, 55 )
+scale = Vector2( 0.2175, 0.2175 )
+texture = ExtResource( 6 )
+
+[node name="AhiLabel" type="Label" parent="HBoxContainer/VBoxContainer/Ahi"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -19.5
+margin_right = 342.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Frozen Ahi"
+valign = 1
+
+[node name="FrozenAmt" type="Label" parent="HBoxContainer/VBoxContainer/Ahi"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -19.5
+margin_right = -9.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "1 lb."
+valign = 1
+
+[node name="Rice" type="Panel" parent="HBoxContainer/VBoxContainer"]
+margin_top = 135.0
+margin_right = 477.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+
+[node name="Rice" type="Sprite" parent="HBoxContainer/VBoxContainer/Rice"]
+position = Vector2( 61, 57 )
+scale = Vector2( 0.365, 0.365 )
+texture = ExtResource( 5 )
+
+[node name="RiceLabel" type="Label" parent="HBoxContainer/VBoxContainer/Rice"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -19.5
+margin_right = 342.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "White Rice"
+valign = 1
+
+[node name="RiceAmt" type="Label" parent="HBoxContainer/VBoxContainer/Rice"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -19.5
+margin_right = -9.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "1 lb."
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 497.0
+margin_right = 974.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Seasoning" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 477.0
+margin_bottom = 115.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+
+[node name="Seasoning" type="Sprite" parent="HBoxContainer/VBoxContainer2/Seasoning"]
+position = Vector2( 57.625, 57.6131 )
+scale = Vector2( 0.399635, 0.399635 )
+texture = ExtResource( 4 )
+
+[node name="SeasoningLabel" type="Label" parent="HBoxContainer/VBoxContainer2/Seasoning"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -19.5
+margin_right = 342.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Seasoning"
+valign = 1
+
+[node name="SeasoningAmt" type="Label" parent="HBoxContainer/VBoxContainer2/Seasoning"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -19.5
+margin_right = -9.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "1 lb."
+valign = 1
+
+[node name="Utensils" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 135.0
+margin_right = 477.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+
+[node name="Bowl" type="Sprite" parent="HBoxContainer/VBoxContainer2/Utensils"]
+position = Vector2( 56.6736, 56.625 )
+scale = Vector2( 0.337963, 0.337963 )
+texture = ExtResource( 1 )
+
+[node name="UtensilsLabel" type="Label" parent="HBoxContainer/VBoxContainer2/Utensils"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -19.5
+margin_right = 342.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Utensils"
+valign = 1
+
+[node name="UtensilsAmt" type="Label" parent="HBoxContainer/VBoxContainer2/Utensils"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -19.5
+margin_right = -9.0
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "1 set"
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 509.0
+margin_right = 1024.0
+margin_bottom = 554.0
+alignment = 1
+
+[node name="InventoryPurchase" type="Button" parent="HBoxContainer2"]
+margin_left = 366.0
+margin_right = 657.0
+margin_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 12 )
+custom_styles/normal = ExtResource( 11 )
+text = "Inventory Purchase"
