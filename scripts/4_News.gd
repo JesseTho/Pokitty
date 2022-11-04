@@ -14,11 +14,11 @@ func _ready(): #New Day Begins
 	var priceCategory
 	
 	if (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird):
-		priceCategory = 0
+		priceCategory = 0 #low
 	elif (GameManager.frozenPrice <= GameManager.fishPriceRNG[0] + onethird + onethird):
-		priceCategory = 1
+		priceCategory = 1 #medium
 	else:
-		priceCategory = 2
+		priceCategory = 2 #high
 	
 	print("frozen:" + str(GameManager.frozenPrice))
 	print("priceCategory " + str(priceCategory))
