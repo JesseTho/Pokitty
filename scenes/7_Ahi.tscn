@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/7_Ahi.gd" type="Script" id=1]
 [ext_resource path="res://images/ahi_bg.jpg" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://styles/titles.tres" type="DynamicFont" id=7]
 [ext_resource path="res://styles/whitebox.tres" type="StyleBox" id=8]
 [ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=9]
+[ext_resource path="res://styles/buttontext.tres" type="DynamicFont" id=10]
+[ext_resource path="res://styles/orangebutton.tres" type="StyleBox" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -53,10 +55,10 @@ custom_styles/panel = ExtResource( 8 )
 [node name="Label" type="Label" parent="VBoxContainer/FreshAhi"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 50.0
-margin_top = -11.0
-margin_right = 181.0
-margin_bottom = 16.0
+margin_left = 52.0
+margin_top = -23.5
+margin_right = 193.0
+margin_bottom = 3.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Fresh Ahi "
@@ -64,10 +66,10 @@ text = "Fresh Ahi "
 [node name="pricelabel" type="Label" parent="VBoxContainer/FreshAhi"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 51.0
-margin_top = 15.5
-margin_right = 223.0
-margin_bottom = 42.5
+margin_left = 53.0
+margin_top = 6.5
+margin_right = 237.0
+margin_bottom = 33.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Market Price:"
@@ -87,7 +89,7 @@ alignment = 1
 margin_left = 30.0
 margin_right = 50.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 20, 0 )
+rect_min_size = Vector2( 20, 20 )
 text = "-"
 
 [node name="CurrentLabel" type="Label" parent="VBoxContainer/FreshAhi/BuyHBox"]
@@ -105,6 +107,7 @@ valign = 1
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
 text = "+"
 
 [node name="Frozen Ahi" type="Panel" parent="VBoxContainer"]
@@ -119,9 +122,9 @@ custom_styles/panel = ExtResource( 8 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
-margin_top = -11.0
-margin_right = 190.0
-margin_bottom = 16.0
+margin_top = -24.0
+margin_right = 199.0
+margin_bottom = 3.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Frozen Ahi"
@@ -130,9 +133,9 @@ text = "Frozen Ahi"
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 50.0
-margin_top = 11.0
-margin_right = 190.0
-margin_bottom = 38.0
+margin_top = 6.0
+margin_right = 234.0
+margin_bottom = 33.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Market Price:"
@@ -152,7 +155,7 @@ alignment = 1
 margin_left = 30.0
 margin_right = 50.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 20, 0 )
+rect_min_size = Vector2( 20, 20 )
 text = "-"
 
 [node name="CurrentLabel" type="Label" parent="VBoxContainer/Frozen Ahi/BuyHBox"]
@@ -170,6 +173,7 @@ valign = 1
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
 text = "+"
 
 [node name="Bulk Frozen" type="Panel" parent="VBoxContainer"]
@@ -295,6 +299,13 @@ margin_left = 332.0
 margin_right = 487.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 155, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 text = "Cancel"
 
 [node name="BuyButton" type="Button" parent="HBoxContainer"]
@@ -302,6 +313,13 @@ margin_left = 537.0
 margin_right = 692.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 155, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = ExtResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 text = "Buy"
 
 [connection signal="pressed" from="VBoxContainer/FreshAhi/BuyHBox/SubtractButton" to="." method="_cartUpdate" binds= [ true, -1 ]]
