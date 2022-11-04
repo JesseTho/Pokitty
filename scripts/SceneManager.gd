@@ -7,7 +7,7 @@ func LoadScene(var Scene):
 	#Get the Root Node
 	rootNode = get_tree().get_root().get_node("Root")
 
-	var LoadScene = load("res://scenes/" + Scene + ".tscn").instance()
+	var LoadScene = load("res://scenes/" + str(Scene) + ".tscn").instance()
 	LoadScene.name = Scene
 	#Remove Old Scene
 	if(currentScene != "none"):
