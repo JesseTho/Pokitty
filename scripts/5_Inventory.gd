@@ -25,7 +25,8 @@ func loadPopup(var SceneName):
 		SceneManager.LoadDialog(SceneName)
 		
 func _process(delta):	
-	$VBoxContainer/Ahi/AhiAmount.text = str(GameManager.freshAhi + GameManager.frozenAhi) + " lbs"
+	$VBoxContainer/Ahi/FreshAhi/FreshAmount.text = str(GameManager.freshAhi) + " lbs"
+	$VBoxContainer/Ahi/FrozenAhi/FrozenAmount.text = str(GameManager.frozenAhi) + " lbs"
 	$VBoxContainer/Seasoning/SeasoningAmount2.text = str(GameManager.seasoning)  + " lbs"
 	$VBoxContainer/Rice/RiceAmount.text = str(GameManager.rice)  + " lbs"
 	$VBoxContainer/BowlsUtensils/BowlsUtensilsAmount2.text = str(GameManager.utensils) + " sets"

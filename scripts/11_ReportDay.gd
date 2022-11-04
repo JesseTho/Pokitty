@@ -18,4 +18,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	SceneManager.LoadScene("3_Location")
+	SceneManager.LoadScene("16_RemainingInventory")
