@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer2/LocationStatus/LocationName.text = str(GameManager.locationName[GameManager.location])
-	$VBoxContainer2/LocationStatus/LocationInfo.text = "Consumer Expectation: " + "\n" + "Today's Weather: " + str(GameManager.weatherName[GameManager.weather]) + "\n" + "Today's Visitor Traffic: " + "\n" + "Today's Event: " + str(GameManager.eventName[GameManager.event])
+	$VBoxContainer2/LocationStatus/LocationInfo.text = "Location Fee: $" + str(GameManager.locationFee[GameManager.location]) + "\n" + "Consumer Expectation: " + "\n" + "Today's Weather: " + str(GameManager.weatherName[GameManager.weather]) + "\n" + "Today's Visitor Traffic: " + "\n" + "Today's Event: " + str(GameManager.eventName[GameManager.event])
 	pass # Replace with function body.
 
 func _bowlPrice(var amt):
