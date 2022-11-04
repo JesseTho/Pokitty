@@ -1,12 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
 [ext_resource path="res://skybox.png" type="Texture" id=2]
 [ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/DayTimer.gd" type="Script" id=4]
-[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=5]
-[ext_resource path="res://prefab/Cat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://images/rain.png" type="Texture" id=5]
+[ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://images/puddle.png" type="Texture" id=8]
+
+[sub_resource type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -29,6 +35,9 @@ position = Vector2( 518, 762 )
 scale = Vector2( 1.37691, 1.37691 )
 texture = ExtResource( 2 )
 texture_scale = 1.47
+shadow_gradient_length = 89.5
+shadow_filter = 1
+shadow_filter_smooth = 2.2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.182305, 0.18906, 0.191406, 1 )
@@ -36,6 +45,32 @@ color = Color( 0.182305, 0.18906, 0.191406, 1 )
 [node name="OpentruckBg" type="Sprite" parent="."]
 position = Vector2( 514, 301 )
 texture = ExtResource( 3 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OpentruckBg"]
+material = SubResource( 4 )
+position = Vector2( -7.99997, -149 )
+scale = Vector2( 0.513268, 0.830001 )
+amount = 200
+lifetime = 2.0
+speed_scale = 6.5
+randomness = 0.02
+texture = ExtResource( 5 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 400 )
+spread = 0.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OpentruckBg/CPUParticles2D"]
+position = Vector2( 77.932, 522.891 )
+amount = 50
+lifetime = 0.25
+texture = ExtResource( 8 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 50 )
+gravity = Vector2( 0, 0 )
+scale_amount = 0.96
+scale_amount_random = 0.31
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
 margin_left = 195.0
@@ -143,8 +178,6 @@ margin_top = 78.0
 margin_right = -322.0
 margin_bottom = 118.0
 
-[node name="Cat1" parent="OpentruckBg" instance=ExtResource( 6 )]
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
@@ -156,7 +189,7 @@ script = ExtResource( 4 )
 wait_time = 0.1
 autostart = true
 
-[node name="GameStatus" parent="." instance=ExtResource( 5 )]
+[node name="GameStatus" parent="." instance=ExtResource( 6 )]
 
 [connection signal="toggled" from="OpentruckBg/CheckButton" to="." method="FastForward"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
