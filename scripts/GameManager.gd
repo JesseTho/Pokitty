@@ -23,8 +23,8 @@ var pokeSold = 0
 var startingMoney = 500 #starting money
 var fishPriceRNG = [10,20] #range of price of fish
 var fishPriceMod = 1.25 #how much more is fresh fish compared to frozen
-var weatherMod = [1.5,1,0.5] #how weather effects visitors
-var touristMod = [0.5,1,2] #Tourist Modifier
+var weatherMod = [1.2,1,0.8] #how weather effects visitors
+var touristMod = [0.8,1,1.25] #Tourist Modifier
 var weatherName = ["Sunny","Cloudy","Rainy"]
 var visitorRNG = [12,50] #range of visitors in a day
 var locationName = ["Wakiki","Kalihi","Pearl City","North Shore"]
@@ -38,6 +38,13 @@ var seasonPrices = [5,8,10] #prices for seasoning
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
 var utensilPrices = [5,8,10] 
 var utensilAmt = [20,50,100] #Amount of you can buy in Sets
+#Price Mods
+var buyRange = 12
+var freshMod = 1.2
+var touristPriceMod =  1.6
+var locationPriceMod = [1.5,1,0.9,1.1]
+var popularityMod = 1 + (popularity * 0.001)
+
 
 
 #Calculations
@@ -103,10 +110,36 @@ func newDay():
 		event = 0
 		print("No Event Today!")
 	
+func priceCheckFresh():
+	
+	
+	touristPriceMod =  1 * touristMod[tourists]
+	popularityMod = 1 + (popularity * 0.001)
+	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod * freshMod 
+	print("Max can charge: $" + str(maxCost))
+	if(bowlPrice <= maxCost):
+		return true
+	else:
+		return false
+
+
+func priceCheckFrozen():
+	
+	#freshMod = 1.2
+	touristPriceMod =  1 * touristMod[tourists]
+	popularityMod = 1 + (popularity * 0.001)
+	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod
+	print("Max can charge: $" + str(maxCost))
+	if(bowlPrice <= maxCost):
+		return true
+	else:
+		return false
+
+
 
 
 func buyFresh():
-	if(freshAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25):
+	if(freshAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25 && priceCheckFresh()):
 		freshAhi-=0.5
 		rice-=0.5
 		utensils-=1
@@ -117,7 +150,7 @@ func buyFresh():
 		return false
 	
 func buyFrozen():
-	if(frozenAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25):
+	if(frozenAhi >= 0.5 && rice >= 0.5 && utensils >= 1 && seasoning >= 0.25 && priceCheckFrozen()):
 		frozenAhi-=0.5
 		rice-=0.5
 		utensils-=1
