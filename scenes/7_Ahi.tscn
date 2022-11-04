@@ -61,6 +61,17 @@ custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Fresh Ahi "
 
+[node name="pricelabel" type="Label" parent="VBoxContainer/FreshAhi"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 51.0
+margin_top = 15.5
+margin_right = 223.0
+margin_bottom = 42.5
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Market Price:"
+
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/FreshAhi"]
 anchor_left = 1.0
 anchor_top = 0.5
@@ -114,6 +125,17 @@ margin_bottom = 16.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Frozen Ahi"
+
+[node name="priceLabel" type="Label" parent="VBoxContainer/Frozen Ahi"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = 11.0
+margin_right = 190.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Market Price:"
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/Frozen Ahi"]
 anchor_left = 1.0

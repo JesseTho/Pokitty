@@ -9,6 +9,8 @@ var frozenamt = 0
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$VBoxContainer/FreshAhi/pricelabel.text = "Market Price: $"+ str(GameManager.freshPrice)
+	$"VBoxContainer/Frozen Ahi/priceLabel".text = "Market Price: $"+ str(GameManager.frozenPrice)
 	freshahicart = $"VBoxContainer/FreshAhi/BuyHBox/CurrentLabel"
 	frozenahicart = $"VBoxContainer/Frozen Ahi/BuyHBox/CurrentLabel"
 
