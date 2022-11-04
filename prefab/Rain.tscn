@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://images/puddle.png" type="Texture" id=1]
+[ext_resource path="res://images/rain.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[node name="Rain" type="CPUParticles2D"]
+material = SubResource( 4 )
+position = Vector2( -7.99997, -149 )
+scale = Vector2( 0.513268, 0.830001 )
+amount = 200
+lifetime = 2.0
+speed_scale = 6.5
+randomness = 0.02
+texture = ExtResource( 2 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 400 )
+spread = 0.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+
+[node name="Splash" type="CPUParticles2D" parent="."]
+position = Vector2( 77.932, 522.891 )
+amount = 50
+lifetime = 0.25
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 50 )
+gravity = Vector2( 0, 0 )
+scale_amount = 0.96
+scale_amount_random = 0.31

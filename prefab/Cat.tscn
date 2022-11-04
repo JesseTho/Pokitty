@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://images/cat1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Cat.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -73.3004, 60.8276, -71.7733, 68.069, -68.7192, 76.7586, -62.6108, 84, -51.9211, 89.7931, -39.7044, 95.5862, -24.4335, 98.4828, -4.58127, 95.5862, 6.10837, 91.2414, 16.798, 84, 24.4335, 78.2069, 29.0148, 66.6207, 35.1231, 75.3104, 35.1231, 88.3448, 25.9606, 98.4828, 13.7438, 105.724, -1.52707, 111.517, -21.3793, 112.966, -41.2315, 110.069, -56.5024, 102.828, -65.665, 94.1379, -71.7733, 86.8966, -76.3546, 75.3104 )
 
 [node name="Cat1" type="Sprite"]
 position = Vector2( -207, 211 )
@@ -11,3 +14,7 @@ script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 playback_process_mode = 0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 0, 1.44827 )
+occluder = SubResource( 1 )
