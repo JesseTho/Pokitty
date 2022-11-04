@@ -43,6 +43,7 @@ var buyRange = 12
 var freshMod = 1.2
 var touristPriceMod =  1.6
 var locationPriceMod = [1.5,1,0.9,1.1]
+var touristlocationMod = [1,0,0,1]
 var popularityMod = 1 + (popularity * 0.001)
 
 
@@ -113,7 +114,7 @@ func newDay():
 func priceCheckFresh():
 	
 	
-	touristPriceMod =  1 * touristMod[tourists]
+	touristPriceMod =  (touristMod[tourists] * touristlocationMod[location])  
 	popularityMod = 1 + (popularity * 0.001)
 	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod * freshMod 
 	print("Max can charge: $" + str(maxCost))
@@ -126,7 +127,7 @@ func priceCheckFresh():
 func priceCheckFrozen():
 	
 	#freshMod = 1.2
-	touristPriceMod =  1 * touristMod[tourists]
+	touristPriceMod =  (touristMod[tourists] * touristlocationMod[location])  
 	popularityMod = 1 + (popularity * 0.001)
 	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod
 	print("Max can charge: $" + str(maxCost))
