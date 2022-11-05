@@ -23,7 +23,7 @@ __meta__ = {
 }
 
 [node name="IntroBg" type="Sprite" parent="."]
-position = Vector2( 514, 303 )
+position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="IntroBg"]
