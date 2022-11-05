@@ -35,6 +35,7 @@ func buyAhi():
 		print("Can't Afford!")
 	else: #Can Afford?
 		GameManager.money = GameManager.money - cost
+		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.frozenAhi = GameManager.frozenAhi + frozenamt
 		GameManager.freshAhi = GameManager.freshAhi + freshamt
 		print("Bought: Fresh " + str(freshamt) + " lb.")

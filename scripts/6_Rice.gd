@@ -39,6 +39,7 @@ func buyRice():
 		print("Can't Afford!")
 	else: #Can Afford?
 		GameManager.money = GameManager.money - cost # Subtracting Cost of Rice
+		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.rice = GameManager.rice + (smlAmt * GameManager.riceAmt[0]) + (medAmt * GameManager.riceAmt[1]) + (lrgAmt * GameManager.riceAmt[2]) #Adding Rice to Inventory
 		print ("Bought; Rice " + str((smlAmt * GameManager.riceAmt[0]) + (medAmt * GameManager.riceAmt[1]) + (lrgAmt * GameManager.riceAmt[2])) + "lbs")
 		print ("Total Rice: " + str(GameManager.rice) + "lbs")

@@ -38,6 +38,7 @@ func buyseasoning():
 		
 		print("Can't Afford!")
 	else: #Can Afford?
+		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.money = GameManager.money - cost # Subtracting Cost of seasoning
 		GameManager.seasoning = GameManager.seasoning + (smlAmt * GameManager.seasonAmt[0]) + (medAmt * GameManager.seasonAmt[1]) + (lrgAmt * GameManager.seasonAmt[2]) #Adding seasoning to Inventory
 		print ("Bought; Seasoning " + str((smlAmt * GameManager.seasonAmt[0]) + (medAmt * GameManager.seasonAmt[1]) + (lrgAmt * GameManager.seasonAmt[2])) + "lbs")

@@ -18,6 +18,9 @@ var event
 var weather
 var bowlPrice = 12  #starting bowl price
 var pokeSold = 0
+var totalSpent = 0
+var totalMade = 0
+var totalSold = 0
 
 #Game Balance 
 var startingMoney = 500 #starting money
@@ -147,6 +150,9 @@ func buyFresh():
 		utensils-=1
 		seasoning-=0.25
 		money = money+bowlPrice
+		totalMade = totalMade+bowlPrice
+		pokeSold+=1
+		totalSold+=1
 		return true ## 
 	else:
 		return false
@@ -158,6 +164,9 @@ func buyFrozen():
 		utensils-=1
 		seasoning-=0.25
 		money = money+bowlPrice
+		totalMade = totalMade+bowlPrice
+		pokeSold+=1
+		totalSold+=1
 		return true	
 	else:
 		return false

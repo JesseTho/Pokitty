@@ -38,6 +38,7 @@ func _buy():
 		
 		print("Can't Afford!")
 	else: #Can Afford?
+		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.money = GameManager.money - cost # Subtracting Cost of utensils
 		GameManager.utensils = GameManager.utensils + (smlAmt * GameManager.utensilAmt[0]) + (medAmt * GameManager.utensilAmt[1]) + (lrgAmt * GameManager.utensilAmt[2]) #Adding utensils to Inventory
 		print ("Bought; utensils " + str((smlAmt * GameManager.utensilAmt[0]) + (medAmt * GameManager.utensilAmt[1]) + (lrgAmt * GameManager.utensilAmt[2])) + "sets")
