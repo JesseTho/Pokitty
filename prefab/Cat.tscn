@@ -1,8 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://images/cat_sprite1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Cat.gd" type="Script" id=2]
 [ext_resource path="res://images/shadow.png" type="Texture" id=3]
+[ext_resource path="res://images/cat_unhappy.png" type="Texture" id=4]
+[ext_resource path="res://images/cat_happy.png" type="Texture" id=5]
+[ext_resource path="res://images/cat_notbuying.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CatIdle"
@@ -166,6 +177,11 @@ step = 0.03
 position = Vector2( -207, 211 )
 scale = Vector2( 0.654839, 0.690476 )
 script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -22.9064, -127.448 )
+frames = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 playback_process_mode = 0

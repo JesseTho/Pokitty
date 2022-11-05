@@ -43,7 +43,8 @@ func _ready():
 		print("bought fresh poke!")
 		GameManager.popularity+=1
 		GameManager.pokeSold+=1
-		
+		$AnimatedSprite.visible = true
+		$AnimatedSprite.frame = 1
 		print(":)") 
 		
 		
@@ -52,13 +53,19 @@ func _ready():
 		if(GameManager.location != 1 || GameManager.location != 2): #check for location with higher standards
 			GameManager.popularity+=1
 			GameManager.pokeSold+=1
-			
+			$AnimatedSprite.visible = true
+			$AnimatedSprite.frame = 1
 			print(":)")
 		else:
+			$AnimatedSprite.visible = true
+			$AnimatedSprite.frame = 0
 			print(":|")
+			
 	
 	if(!GameManager.buyFresh()&& !GameManager.buyFrozen()): #can't buy either!
 		print("Can't buy poke! :(")
+		$AnimatedSprite.visible = true
+		$AnimatedSprite.frame = 2
 	
 	$Tween.interpolate_property(self, "position",endPos,startPos, 2,  Tween.EASE_IN_OUT, Tween.EASE_IN_OUT) 
 	$Tween.start()
