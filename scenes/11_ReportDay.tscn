@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/11_ReportDay.gd" type="Script" id=1]
 [ext_resource path="res://images/browncat.png" type="Texture" id=2]
@@ -6,12 +6,15 @@
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://fonts/TangoSans_Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://images/bg.jpg" type="Texture" id=6]
-[ext_resource path="res://styles/buttontext.tres" type="DynamicFont" id=7]
-[ext_resource path="res://styles/orangebutton.tres" type="StyleBox" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -35,7 +38,11 @@ margin_top = -264.0
 margin_right = -236.0
 margin_bottom = -216.0
 
-[node name="EndofDay" type="Label" parent="Background"]
+[node name="Browncat" type="Sprite" parent="Background"]
+position = Vector2( -341, 29 )
+texture = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="Background"]
 margin_left = -147.0
 margin_top = -162.0
 margin_right = 318.0
@@ -45,23 +52,12 @@ text = "End of Day ## Report"
 align = 1
 valign = 1
 
-[node name="Browncat" type="Sprite" parent="Background"]
-position = Vector2( -347, 43 )
-scale = Vector2( 0.915427, 0.901961 )
-texture = ExtResource( 2 )
-
 [node name="Next" type="Button" parent="Background"]
 margin_left = 21.0
 margin_top = 114.0
 margin_right = 158.0
 margin_bottom = 156.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 7 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/focus = ExtResource( 8 )
-custom_styles/disabled = ExtResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = SubResource( 2 )
 text = "NEXT"
 
 [node name="NumPokeBowls" type="Label" parent="Background"]
@@ -78,7 +74,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PokeBowls" type="Label" parent="Background"]
+[node name="PokeBowlsText" type="Label" parent="Background"]
 margin_left = -68.0
 margin_top = -70.0
 margin_right = 148.0
@@ -103,7 +99,7 @@ text = "##"
 align = 1
 valign = 1
 
-[node name="Likes" type="Label" parent="Background"]
+[node name="LikesText" type="Label" parent="Background"]
 margin_left = -68.0
 margin_top = -19.0
 margin_right = 341.0
