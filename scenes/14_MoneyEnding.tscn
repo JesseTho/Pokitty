@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://styles/eventbox.tres" type="StyleBox" id=2]
 [ext_resource path="res://images/boss-cat.png" type="Texture" id=3]
+[ext_resource path="res://styles/smalltext.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0.901961 )
@@ -48,10 +49,11 @@ autowrap = true
 
 [node name="StoryLabel" type="Label" parent="HBoxContainer/Popup"]
 margin_left = 280.0
-margin_top = 86.0
-margin_right = 880.0
-margin_bottom = 133.0
+margin_top = 94.0
+margin_right = 715.0
+margin_bottom = 135.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "You are visited by the Fat Cats, the richest cats on the island."
 autowrap = true
 
@@ -62,9 +64,9 @@ texture = ExtResource( 3 )
 
 [node name="Dialogue" type="Panel" parent="HBoxContainer/Popup"]
 margin_left = 285.0
-margin_top = 136.0
+margin_top = 144.0
 margin_right = 709.0
-margin_bottom = 249.0
+margin_bottom = 257.0
 rect_min_size = Vector2( 400, 100 )
 custom_styles/panel = ExtResource( 2 )
 
@@ -72,8 +74,9 @@ custom_styles/panel = ExtResource( 2 )
 margin_left = 26.0
 margin_top = 29.0
 margin_right = 394.0
-margin_bottom = 123.0
+margin_bottom = 93.0
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
 text = "\"The world needs your poke in their face. We will give you one bazillion dollars to make Poke Cat into a national franchise!\""
 autowrap = true
 
@@ -102,8 +105,9 @@ text = "Decline, Continue Playing"
 
 [node name="StoryLabel2" type="Label" parent="HBoxContainer/Popup"]
 margin_left = 279.0
-margin_top = 287.0
-margin_right = 443.0
-margin_bottom = 301.0
+margin_top = 285.0
+margin_right = 489.0
+margin_bottom = 302.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Do you accept their offer?"

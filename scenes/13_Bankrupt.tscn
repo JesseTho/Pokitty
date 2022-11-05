@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/seal-cartoon.png" type="Texture" id=2]
 [ext_resource path="res://styles/eventbox.tres" type="StyleBox" id=3]
 [ext_resource path="res://scripts/13_Bankrupt.gd" type="Script" id=4]
+[ext_resource path="res://styles/smalltext.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0.901961 )
@@ -54,6 +55,7 @@ margin_top = 100.0
 margin_right = 700.0
 margin_bottom = 171.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "You are running out of money and don’t know what to do! Luckily, your best friend Koalani the Seal visits and gives you some fresh fish."
 autowrap = true
 
@@ -71,6 +73,7 @@ margin_top = 29.0
 margin_right = 394.0
 margin_bottom = 123.0
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
 text = "\"Don’t give up on your business! Take this and keep making those ono poke bowls.\""
 autowrap = true
 
