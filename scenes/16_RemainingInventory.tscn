@@ -41,7 +41,7 @@ margin_right = 1024.0
 margin_bottom = 162.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "Your fresh ahi has gone bad."
+text = "Your remaining fresh ahi has gone bad."
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
