@@ -77,6 +77,6 @@ text = "SELECT"
 [node name="GameStatus" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="LocationBg/NorthShore" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 3 ]]
-[connection signal="pressed" from="LocationBg/Waikiki" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 3 ]]
-[connection signal="pressed" from="LocationBg/Kalihi" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 3 ]]
-[connection signal="pressed" from="LocationBg/Pearl City" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 3 ]]
+[connection signal="pressed" from="LocationBg/Waikiki" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 0 ]]
+[connection signal="pressed" from="LocationBg/Kalihi" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 1 ]]
+[connection signal="pressed" from="LocationBg/Pearl City" to="." method="_on_Button_pressed" binds= [ "5_Inventory", 2 ]]
