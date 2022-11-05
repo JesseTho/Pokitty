@@ -203,7 +203,7 @@ script = ExtResource( 4 )
 [node name="CatTimer" type="Timer" parent="."]
 
 [node name="Day" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.13
 autostart = true
 
 [node name="GameStatus" parent="." instance=ExtResource( 6 )]

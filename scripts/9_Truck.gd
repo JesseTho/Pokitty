@@ -22,7 +22,7 @@ func FastForward(var enabled):
 		UpdateTime()
 	else:
 		timer.wait_time = 5
-		dayTimer.wait_time = 0.1
+		dayTimer.wait_time = 0.13
 		catTimer.wait_time = timer.wait_time/CatsPerHour
 		
 
@@ -86,9 +86,9 @@ func UpdateTime():
 	
 	if (CurrentTime >= 8 && amPM == 0 && CurrentTime < 12):
 		
-		CurrentTime+=1
-		$OpentruckBg/Time.text = str(CurrentTime) + ":00AM"
 		
+		$OpentruckBg/Time.text = str(CurrentTime) + ":00AM"
+		CurrentTime+=1
 		
 	elif(CurrentTime == 12 && amPM == 0):
 		
