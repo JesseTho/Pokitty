@@ -77,14 +77,14 @@ align = 1
 valign = 1
 
 [node name="Time" type="Label" parent="OpentruckBg"]
-margin_left = 195.0
-margin_top = 98.0
-margin_right = 409.0
-margin_bottom = 144.0
+margin_left = 201.0
+margin_top = 103.0
+margin_right = 415.0
+margin_bottom = 149.0
 custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "8:00AM"
-align = 2
+align = 1
 valign = 1
 
 [node name="FF" type="Label" parent="OpentruckBg"]
