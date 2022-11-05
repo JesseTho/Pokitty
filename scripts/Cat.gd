@@ -45,6 +45,7 @@ func _ready():
 		GameManager.pokeSold+=1
 		$AnimatedSprite.visible = true
 		$AnimatedSprite.frame = 1
+		$Poke.visible = true
 		print(":)") 
 		
 		
@@ -55,6 +56,7 @@ func _ready():
 			GameManager.pokeSold+=1
 			$AnimatedSprite.visible = true
 			$AnimatedSprite.frame = 1
+			$Poke.visible = true
 			print(":)")
 		else:
 			$AnimatedSprite.visible = true
