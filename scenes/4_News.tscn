@@ -27,7 +27,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -35,7 +35,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -84,18 +84,18 @@ text = "Oahu News Today"
 align = 1
 autowrap = true
 
-[node name="Events" type="Panel" parent="HBoxContainer/Popup"]
+[node name="Directions" type="Panel" parent="HBoxContainer/Popup"]
 margin_left = 50.0
-margin_top = 75.0
+margin_top = 78.0
 margin_right = 750.0
-margin_bottom = 127.0
+margin_bottom = 130.0
 rect_min_size = Vector2( 400, 50 )
 rect_clip_content = true
 size_flags_horizontal = 7
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="HBoxContainer/Popup/Events"]
+[node name="DIRECTIONS" type="Label" parent="HBoxContainer/Popup/Directions"]
 margin_left = 60.0
 margin_top = 12.0
 margin_right = 639.0
@@ -105,21 +105,21 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Events2" type="Panel" parent="HBoxContainer/Popup"]
+[node name="Events" type="Panel" parent="HBoxContainer/Popup"]
 margin_left = 51.0
-margin_top = 145.0
-margin_right = 762.0
-margin_bottom = 254.0
+margin_top = 148.0
+margin_right = 750.0
+margin_bottom = 257.0
 rect_min_size = Vector2( 400, 100 )
 size_flags_horizontal = 7
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 3 )
 
-[node name="EventIcon" type="Sprite" parent="HBoxContainer/Popup/Events2"]
+[node name="EventIcon" type="Sprite" parent="HBoxContainer/Popup/Events"]
 position = Vector2( 72, 44 )
 texture = ExtResource( 4 )
 
-[node name="EVENTS" type="Label" parent="HBoxContainer/Popup/Events2"]
+[node name="EVENTS" type="Label" parent="HBoxContainer/Popup/Events"]
 anchor_top = -0.366972
 anchor_bottom = -0.366972
 margin_left = 48.0
@@ -128,7 +128,7 @@ margin_right = 94.0
 margin_bottom = 138.0
 text = "EVENTS"
 
-[node name="EventInfo" type="Label" parent="HBoxContainer/Popup/Events2"]
+[node name="EventInfo" type="Label" parent="HBoxContainer/Popup/Events"]
 anchor_top = -0.366972
 anchor_bottom = -0.366972
 margin_left = 141.0
