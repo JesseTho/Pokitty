@@ -9,6 +9,7 @@ func _ready(): #New Day Begins
 	$HBoxContainer/Popup/HBoxContainer/Weather/CurrentWeather.text = GameManager.weatherName[GameManager.weather]
 	$HBoxContainer/Popup/HBoxContainer/Weather/AnimatedSprite.frame = GameManager.weather
 	$HBoxContainer/Popup/HBoxContainer/Visitor/CurrentVisitors.text = GameManager.rangeNames[GameManager.tourists]
+	$HBoxContainer/Popup/HBoxContainer/Visitor/AnimatedSprite.frame = GameManager.tourists
 	$HBoxContainer/Popup/Events/EventDesc.text = str(GameManager.eventDesc[GameManager.event])
 	var priceCategory = _getPriceCategory()
 	print("frozen:" + str(GameManager.frozenPrice))
