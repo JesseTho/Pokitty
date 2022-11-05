@@ -21,6 +21,7 @@ var pokeSold = 0
 var totalSpent = 0
 var totalMade = 0
 var totalSold = 0
+var likesDay = 0
 
 #Game Balance 
 var startingMoney = 500 #starting money

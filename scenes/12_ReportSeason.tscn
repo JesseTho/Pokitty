@@ -77,7 +77,7 @@ custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Total Income:
 Total Expenses:
-Liquidated Inventory Value:"
+Total Poke Bowls Sold:"
 
 [node name="IncAmt" type="Label" parent="Background/IncExpLiquidText"]
 margin_left = 451.0
@@ -97,7 +97,7 @@ custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "$ ###"
 
-[node name="LiquidVal" type="Label" parent="Background/IncExpLiquidText"]
+[node name="SoldAmt" type="Label" parent="Background/IncExpLiquidText"]
 margin_left = 452.0
 margin_top = 111.0
 margin_right = 522.0
@@ -121,9 +121,26 @@ margin_right = 99.0
 margin_bottom = 124.0
 custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Next Profit:"
+text = "Net Profit:"
 
 [node name="NetAmt" type="Label" parent="Background/Net"]
+margin_left = 177.0
+margin_right = 247.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "$ ###"
+
+[node name="Popularity" type="Label" parent="Background"]
+margin_left = -63.0
+margin_top = 124.0
+margin_right = 99.0
+margin_bottom = 154.0
+custom_colors/font_color = Color( 0.14902, 0.341176, 0.341176, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Popularity"
+
+[node name="PopAmt" type="Label" parent="Background/Popularity"]
 margin_left = 177.0
 margin_right = 247.0
 margin_bottom = 26.0

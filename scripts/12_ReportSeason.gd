@@ -8,9 +8,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
+	$Background/IncExpLiquidText/IncAmt.text = "S" + str(GameManager.totalMade)
+	$Background/IncExpLiquidText/ExpAmt.text = "S" + str(GameManager.totalSpent)
+	$Background/IncExpLiquidText/SoldAmt.text = GameManager.totalSold + "bowls!" 
+	$Background/Net/NetAmt.text = "$" + str(GameManager.totalMade - GameManager.totalSpent)
+	$Background/Popularity/PopAmt.text = str(GameManager.popularity)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
