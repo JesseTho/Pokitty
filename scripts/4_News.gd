@@ -5,7 +5,7 @@ func _ready(): #New Day Begins
 	GameManager.newDay()
 	
 	#Set text of and icons on news popup
-	$HBoxContainer/Popup/Events2/EventInfo.text = str(GameManager.eventName[GameManager.event])
+	$HBoxContainer/Popup/Events/EventInfo.text = str(GameManager.eventName[GameManager.event])
 	$HBoxContainer/Popup/HBoxContainer/Weather/CurrentWeather.text = GameManager.weatherName[GameManager.weather]
 	$HBoxContainer/Popup/HBoxContainer/Weather/AnimatedSprite.frame = GameManager.weather
 	$HBoxContainer/Popup/HBoxContainer/Visitor/CurrentVisitors.text = GameManager.rangeNames[GameManager.tourists]
