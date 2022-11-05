@@ -19,9 +19,11 @@ func _bowlPrice(var amt):
 	
 
 func _on_Button_pressed(var SceneName):
+		SoundFX.get_node("Truck").play()
 		SceneManager.LoadScene(SceneName)
 	
 func loadPopup(var SceneName):
+		SoundFX.get_node("Doink").play()
 		SceneManager.LoadDialog(SceneName)
 		
 func _process(delta):	

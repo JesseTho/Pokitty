@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/11_ReportDay.gd" type="Script" id=1]
 [ext_resource path="res://images/browncat.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://fonts/TangoSans_Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://images/bg.jpg" type="Texture" id=6]
+[ext_resource path="res://styles/orangebutton.tres" type="StyleBox" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -58,6 +59,11 @@ margin_top = 114.0
 margin_right = 158.0
 margin_bottom = 156.0
 custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
 text = "NEXT"
 
 [node name="NumPokeBowls" type="Label" parent="Background"]

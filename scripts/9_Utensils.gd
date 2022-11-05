@@ -33,11 +33,13 @@ func _cartUpdate(var size, var addSubtract):
 		
 	pass	
 func _buy():
+	
 	var cost = (smlAmt * GameManager.utensilPrices[0]) + (medAmt * GameManager.utensilPrices[1] + (lrgAmt * GameManager.utensilPrices[2]))
 	if(cost > GameManager.money):
-		
+		SoundFX.get_node("Hiss").play()
 		print("Can't Afford!")
 	else: #Can Afford?
+		SoundFX.get_node("Register").play()
 		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.money = GameManager.money - cost # Subtracting Cost of utensils
 		GameManager.utensils = GameManager.utensils + (smlAmt * GameManager.utensilAmt[0]) + (medAmt * GameManager.utensilAmt[1]) + (lrgAmt * GameManager.utensilAmt[2]) #Adding utensils to Inventory
@@ -53,4 +55,5 @@ func _buy():
 		queue_free()
 		
 func _Exit():
+	SoundFX.get_node("Doink").play()
 	queue_free()

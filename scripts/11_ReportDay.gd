@@ -25,4 +25,5 @@ func _ready():
 
 
 func _on_Button_pressed():
+	SoundFX.get_node("Doink").play()
 	SceneManager.LoadScene("16_RemainingInventory")

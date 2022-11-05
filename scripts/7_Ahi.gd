@@ -29,11 +29,13 @@ func _cartUpdate(var freshFrozen, var addSubtract):
 		
 	pass	
 func buyAhi():
+	
 	var cost = (frozenamt * GameManager.frozenPrice) + (freshamt * GameManager.freshPrice)
 	if(cost > GameManager.money):
-		
+		SoundFX.get_node("Hiss").play()
 		print("Can't Afford!")
 	else: #Can Afford?
+		SoundFX.get_node("Register").play()
 		GameManager.money = GameManager.money - cost
 		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.frozenAhi = GameManager.frozenAhi + frozenamt
@@ -48,4 +50,5 @@ func buyAhi():
 		queue_free()
 	
 func _Exit():
+	SoundFX.get_node("Doink").play()
 	queue_free()

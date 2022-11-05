@@ -33,11 +33,13 @@ func _cartUpdate(var size, var addSubtract):
 		
 	pass	
 func buyseasoning():
+	
 	var cost = (smlAmt * GameManager.seasonPrices[0]) + (medAmt * GameManager.seasonPrices[1] + (lrgAmt * GameManager.seasonPrices[2]))
 	if(cost > GameManager.money):
-		
+		SoundFX.get_node("Hiss").play()
 		print("Can't Afford!")
 	else: #Can Afford?
+		SoundFX.get_node("Register").play()
 		GameManager.totalSpent = GameManager.totalSpent + cost
 		GameManager.money = GameManager.money - cost # Subtracting Cost of seasoning
 		GameManager.seasoning = GameManager.seasoning + (smlAmt * GameManager.seasonAmt[0]) + (medAmt * GameManager.seasonAmt[1]) + (lrgAmt * GameManager.seasonAmt[2]) #Adding seasoning to Inventory
@@ -53,4 +55,5 @@ func buyseasoning():
 		queue_free()
 		
 func _Exit():
+	SoundFX.get_node("Doink").play()
 	queue_free()

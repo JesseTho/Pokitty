@@ -18,6 +18,7 @@ config/icon="res://images/icon.png"
 
 GameManager="*res://scripts/GameManager.gd"
 SceneManager="*res://scripts/SceneManager.gd"
+SoundFX="*res://prefab/SoundFX.tscn"
 
 [display]
 

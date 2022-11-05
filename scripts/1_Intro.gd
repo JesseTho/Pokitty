@@ -8,9 +8,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SoundFX.get_node("RelaxingGuitar").play()
+	pass
 
 func _on_Button_pressed(var SceneName):
+	SoundFX.get_node("Doink").play()
 	SceneManager.LoadScene(SceneName)
 	
 

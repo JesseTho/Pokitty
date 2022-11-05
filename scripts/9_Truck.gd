@@ -30,7 +30,7 @@ var CatsPerHour
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	StartDay()
-	# Replace with function body.
+	SoundFX.get_node("RelaxingGuitar").stop()
 	$OpentruckBg/Time.text= str(CurrentTime) + ":00AM"
 	
 	if(GameManager.weather == 1 || GameManager.weather == 2):
@@ -39,8 +39,10 @@ func _ready():
 		$OpentruckBg/Clouds.visible = false	
 	if(GameManager.weather == 2):
 		$OpentruckBg/Rain.visible = true
+		SoundFX.get_node("Rain").play()
 	else:
 		$OpentruckBg/Rain.visible = false
+		SoundFX.get_node("FishNPoi").play()
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -110,6 +112,10 @@ func UpdateTime():
 		EndTurn()
 	
 func EndTurn():
+	SoundFX.get_node("Rain").stop()
+	SoundFX.get_node("FishNPoi").stop()
+	SoundFX.get_node("RelaxingGuitar").play()
+	
 	if(GameManager.currentDay < GameManager.days):
 		
 		SceneManager.LoadScene("11_ReportDay")

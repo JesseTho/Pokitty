@@ -20,4 +20,5 @@ func _ready():
 
 
 func _on_InventoryPurchase_pressed():
+	SoundFX.get_node("Doink").play()
 	SceneManager.LoadScene("3_Location")

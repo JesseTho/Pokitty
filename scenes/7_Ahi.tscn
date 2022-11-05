@@ -115,6 +115,16 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
 text = "+"
 
+[node name="Note" type="Label" parent="VBoxContainer/FreshAhi"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -23.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Customers pay higher prices and give more likes."
+align = 1
+
 [node name="Frozen Ahi" type="Panel" parent="VBoxContainer"]
 margin_top = 182.0
 margin_right = 600.0
@@ -181,6 +191,16 @@ margin_right = 170.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
 text = "+"
+
+[node name="Note" type="Label" parent="VBoxContainer/Frozen Ahi"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -23.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Costs less and doesn't spoil at the end of the day."
+align = 1
 
 [node name="Bulk Frozen" type="Panel" parent="VBoxContainer"]
 visible = false
@@ -272,7 +292,7 @@ margin_right = 130.0
 margin_bottom = 43.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Fresh Ahi
+text = "Ahi
 White Rice
 Seasoning"
 

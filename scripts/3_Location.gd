@@ -4,6 +4,7 @@ func _ready(): #LOAD NEWS POPUP
 	SceneManager.LoadDialog("4_News")
 
 func _on_Button_pressed(var SceneName, var location):
+	SoundFX.get_node("Doink").play()
 	
 	GameManager.location = location
 	

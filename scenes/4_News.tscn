@@ -130,7 +130,7 @@ text = "EVENTS"
 
 [node name="EventInfo" type="Label" parent="HBoxContainer/Popup/Events"]
 anchor_left = -0.0472103
-anchor_top = -0.293578
+anchor_top = -0.376147
 anchor_right = -0.0472103
 anchor_bottom = -0.376147
 margin_left = 141.0

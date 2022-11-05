@@ -17,6 +17,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	
 	SceneManager.LoadScene("0_Root")
 	pass # Replace with function body.

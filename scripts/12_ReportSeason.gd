@@ -10,7 +10,7 @@ extends Node2D
 func _ready():
 	$Background/IncExpLiquidText/IncAmt.text = "S" + str(GameManager.totalMade)
 	$Background/IncExpLiquidText/ExpAmt.text = "S" + str(GameManager.totalSpent)
-	$Background/IncExpLiquidText/SoldAmt.text = GameManager.totalSold + "bowls!" 
+	$Background/IncExpLiquidText/SoldAmt.text = str(GameManager.totalSold) + "bowls!" 
 	$Background/Net/NetAmt.text = "$" + str(GameManager.totalMade - GameManager.totalSpent)
 	$Background/Popularity/PopAmt.text = str(GameManager.popularity)
 	
@@ -20,4 +20,5 @@ func _ready():
 
 
 func _on_Button_pressed():
+	SoundFX.get_node("CatBell").play()
 	SceneManager.LoadScene("0_Root")
