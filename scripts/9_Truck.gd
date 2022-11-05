@@ -32,6 +32,15 @@ func _ready():
 	StartDay()
 	# Replace with function body.
 	$OpentruckBg/Time.text= str(CurrentTime) + ":00AM"
+	
+	if(GameManager.weather == 1 || GameManager.weather == 2):
+		$OpentruckBg/Clouds.visible = true
+	else:
+		$OpentruckBg/Clouds.visible = false	
+	if(GameManager.weather == 2):
+		$OpentruckBg/Rain.visible = true
+	else:
+		$OpentruckBg/Rain.visible = false
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

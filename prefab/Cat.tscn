@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://images/cat_sprite1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Cat.gd" type="Script" id=2]
+[ext_resource path="res://images/shadow.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CatIdle"
@@ -168,6 +169,12 @@ script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 playback_process_mode = 0
+
+[node name="Shadow" type="Sprite" parent="."]
+modulate = Color( 0.0784314, 0.0784314, 0.0784314, 0.741176 )
+position = Vector2( -19.8522, 60.8276 )
+scale = Vector2( 2.3023, 1.73168 )
+texture = ExtResource( 3 )
 
 [node name="CatAnimated" type="Node2D" parent="."]
 position = Vector2( -100.788, -139.035 )
