@@ -58,14 +58,14 @@ func _ready():
 			print(":)")
 		else:
 			$AnimatedSprite.visible = true
-			$AnimatedSprite.frame = 0
+			$AnimatedSprite.frame = 2
 			print(":|")
 			
 	
 	if(!GameManager.buyFresh()&& !GameManager.buyFrozen()): #can't buy either!
 		print("Can't buy poke! :(")
 		$AnimatedSprite.visible = true
-		$AnimatedSprite.frame = 2
+		$AnimatedSprite.frame = 0
 	
 	$Tween.interpolate_property(self, "position",endPos,startPos, 2,  Tween.EASE_IN_OUT, Tween.EASE_IN_OUT) 
 	$Tween.start()
