@@ -129,13 +129,29 @@ margin_bottom = 138.0
 text = "EVENTS"
 
 [node name="EventInfo" type="Label" parent="HBoxContainer/Popup/Events"]
-anchor_top = -0.220183
-anchor_bottom = -0.220183
+anchor_left = -0.0472103
+anchor_top = -0.293578
+anchor_right = -0.0472103
+anchor_bottom = -0.376147
 margin_left = 141.0
 margin_top = 62.0
 margin_right = 255.0
 margin_bottom = 86.0
 text = "Event Information"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="EventDesc" type="Label" parent="HBoxContainer/Popup/Events"]
+anchor_left = -0.0228898
+anchor_top = -0.137615
+anchor_right = 0.492132
+anchor_bottom = 0.0366972
+margin_left = 141.0
+margin_top = 62.0
+margin_right = 255.0
+margin_bottom = 86.0
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
