@@ -4,15 +4,11 @@
 [ext_resource path="res://skybox.png" type="Texture" id=2]
 [ext_resource path="res://images/opentruck_bg.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/DayTimer.gd" type="Script" id=4]
-[ext_resource path="res://images/rain.png" type="Texture" id=5]
+[ext_resource path="res://prefab/Rain.tscn" type="PackedScene" id=5]
 [ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://images/puddle.png" type="Texture" id=8]
-
-[sub_resource type="Shader" id=3]
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+[ext_resource path="res://prefab/Clouds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Price.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -21,6 +17,9 @@ extra_spacing_char = 1
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 7 )
 
 [node name="Truck" type="Node2D"]
@@ -39,38 +38,19 @@ shadow_gradient_length = 89.5
 shadow_filter = 1
 shadow_filter_smooth = 2.2
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.182305, 0.18906, 0.191406, 1 )
-
 [node name="OpentruckBg" type="Sprite" parent="."]
 position = Vector2( 514, 301 )
 texture = ExtResource( 3 )
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="OpentruckBg"]
-material = SubResource( 4 )
-position = Vector2( -7.99997, -149 )
-scale = Vector2( 0.513268, 0.830001 )
-amount = 200
-lifetime = 2.0
-speed_scale = 6.5
-randomness = 0.02
-texture = ExtResource( 5 )
-emission_shape = 2
-emission_rect_extents = Vector2( 1000, 400 )
-spread = 0.0
-scale_amount = 5.0
-scale_amount_random = 1.0
+[node name="Rain" parent="OpentruckBg" instance=ExtResource( 5 )]
+visible = false
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="OpentruckBg/CPUParticles2D"]
-position = Vector2( 77.932, 522.891 )
-amount = 50
-lifetime = 0.25
-texture = ExtResource( 8 )
-emission_shape = 2
-emission_rect_extents = Vector2( 1000, 50 )
-gravity = Vector2( 0, 0 )
-scale_amount = 0.96
-scale_amount_random = 0.31
+[node name="Clouds" parent="OpentruckBg" instance=ExtResource( 8 )]
+visible = false
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+self_modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+position = Vector2( -75, -312 )
+color = Color( 1, 1, 1, 0.658824 )
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
 margin_left = 195.0
@@ -172,6 +152,43 @@ margin_top = 176.0
 margin_right = 98.0
 margin_bottom = 232.0
 
+[node name="PriceHBox" type="HBoxContainer" parent="OpentruckBg"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -188.0
+margin_top = -175.0
+margin_right = -1072.0
+margin_bottom = -155.0
+custom_constants/separation = 20
+alignment = 1
+script = ExtResource( 9 )
+
+[node name="SubtractButton" type="Button" parent="OpentruckBg/PriceHBox"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+text = "-"
+
+[node name="CurrentPrice" type="Label" parent="OpentruckBg/PriceHBox"]
+margin_left = 40.0
+margin_top = 2.0
+margin_right = 100.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 60, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "$12.00"
+align = 1
+valign = 1
+
+[node name="AddButton" type="Button" parent="OpentruckBg/PriceHBox"]
+margin_left = 120.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+text = "+"
+
 [node name="CheckButton" type="CheckButton" parent="OpentruckBg"]
 margin_left = -398.0
 margin_top = 78.0
@@ -191,6 +208,11 @@ autostart = true
 
 [node name="GameStatus" parent="." instance=ExtResource( 6 )]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.182305, 0.18906, 0.191406, 1 )
+
+[connection signal="pressed" from="OpentruckBg/PriceHBox/SubtractButton" to="OpentruckBg/PriceHBox" method="_on_SubtractButton_pressed"]
+[connection signal="pressed" from="OpentruckBg/PriceHBox/AddButton" to="OpentruckBg/PriceHBox" method="_on_AddButton_pressed"]
 [connection signal="toggled" from="OpentruckBg/CheckButton" to="." method="FastForward"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CatTimer" to="." method="CatsBuy"]

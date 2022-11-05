@@ -1,20 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://images/cat_sprite1.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Cat.gd" type="Script" id=2]
-[ext_resource path="res://images/shadow.png" type="Texture" id=3]
-[ext_resource path="res://images/cat_unhappy.png" type="Texture" id=4]
-[ext_resource path="res://images/cat_happy.png" type="Texture" id=5]
-[ext_resource path="res://images/cat_notbuying.png" type="Texture" id=6]
-[ext_resource path="res://images/pokebowl_sprite.png" type="Texture" id=7]
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CatIdle"
@@ -76,10 +62,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0, 0.33, 0.66, 1.14, 1.47 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [  ]
+"values": [ 15.8415, -14.1, 15.8415, 45.9, 15.8415 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Skeleton2D/hip/spine/upperchest:rotation_degrees")
@@ -174,35 +160,10 @@ resource_name = "SETUP"
 length = 0.001
 step = 0.03
 
-[node name="Cat1" type="Sprite"]
-position = Vector2( -207, 211 )
-scale = Vector2( 0.654839, 0.690476 )
-script = ExtResource( 2 )
+[node name="CatAnimated" type="Node2D"]
+position = Vector2( 0, 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -22.9064, -127.448 )
-frames = SubResource( 4 )
-
-[node name="Poke" type="Sprite" parent="."]
-visible = false
-position = Vector2( -58.0295, 7.24133 )
-scale = Vector2( 0.256736, 0.256736 )
-texture = ExtResource( 7 )
-
-[node name="Tween" type="Tween" parent="."]
-playback_process_mode = 0
-
-[node name="Shadow" type="Sprite" parent="."]
-modulate = Color( 0.0784314, 0.0784314, 0.0784314, 0.741176 )
-position = Vector2( -19.8522, 60.8276 )
-scale = Vector2( 2.3023, 1.73168 )
-texture = ExtResource( 3 )
-
-[node name="CatAnimated" type="Node2D" parent="."]
-position = Vector2( -100.788, -139.035 )
-
-[node name="Tail" type="Polygon2D" parent="CatAnimated"]
+[node name="Tail" type="Polygon2D" parent="."]
 position = Vector2( -38, -3.8147e-06 )
 rotation = -0.00071322
 texture = ExtResource( 1 )
@@ -211,7 +172,7 @@ polygon = PoolVector2Array( 152.546, 197.667, 160.212, 197.667, 170.212, 196.5, 
 uv = PoolVector2Array( 152.546, 197.667, 160.212, 197.667, 170.212, 196.5, 174.879, 193.333, 176.712, 186.833, 176.712, 175.333, 178.879, 165.167, 183.379, 155, 190.879, 147.833, 199.212, 141.333, 207.212, 139.5, 213.379, 145.833, 209.712, 154.5, 200.212, 158.167, 196.046, 162.167, 193.212, 167, 192.712, 175.833, 192.546, 187.833, 189.879, 197, 185.879, 203, 178.712, 208, 168.379, 211.5, 154.212, 213.667, 147.879, 207.333, 148.546, 199.667 )
 bones = [ "hip", PoolRealArray( 0.79, 0.4, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4, 0.4, 0.79, 0.79, 0.79 ), "hip/spine", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earR", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earL", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail", PoolRealArray( 0, 0.36, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0.36, 0, 0, 0 ), "hip/tail/tail2", PoolRealArray( 0, 0, 0, 0.72, 1, 0.79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.79, 0.79, 0.72, 0.72, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3", PoolRealArray( 0, 0, 0, 0, 0, 0, 0.64, 0.79, 0.43, 0, 0, 0, 0, 0.43, 1, 0.64, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3/tail4", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0.43, 0.79, 0.79, 0.79, 0.79, 0.79, 0.43, 0.43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
-[node name="Head" type="Polygon2D" parent="CatAnimated"]
+[node name="Head" type="Polygon2D" parent="."]
 position = Vector2( -91, 36 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../Skeleton2D")
@@ -221,7 +182,7 @@ polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 17,
 bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head", PoolRealArray( 0.31, 0, 0.31, 1, 0.31, 0, 0.42, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "hip/spine/upperchest/head/earR", PoolRealArray( 0, 0, 0, 0, 0, 1, 0.29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earL", PoolRealArray( 0.13, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3/tail4", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 4
 
-[node name="Body" type="Polygon2D" parent="CatAnimated"]
+[node name="Body" type="Polygon2D" parent="."]
 position = Vector2( -1, -1.66667 )
 texture = ExtResource( 1 )
 skeleton = NodePath("../Skeleton2D")
@@ -229,66 +190,66 @@ polygon = PoolVector2Array( 81.3765, 96.8961, 100.675, 104.318, 109.852, 118.758
 uv = PoolVector2Array( 81.3765, 96.8961, 100.675, 104.318, 109.852, 118.758, 111.471, 136.167, 114.845, 152.632, 119.838, 174.089, 131.309, 185.83, 137.247, 204.858, 129.825, 220.918, 111.606, 234.278, 87.8542, 240.351, 75.5735, 242.24, 60.5938, 238.731, 39.8111, 230.229, 29.2848, 215.789, 25.1012, 199.055, 31.444, 180.972, 39.946, 175.169, 44.6694, 158.57, 49.9325, 139.001, 51.6869, 117.814, 63.1579, 103.914 )
 bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0.79, 0, 0, 0, 0 ), "hip/spine", PoolRealArray( 0, 0, 0, 0, 0.79, 0.79, 0.79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.79, 1, 0.79, 0, 0, 0 ), "hip/spine/upperchest", PoolRealArray( 0, 0, 0.79, 0.79, 0.79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.79, 0.79, 0.79, 0 ), "hip/spine/upperchest/head", PoolRealArray( 0.78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earR", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earL", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3/tail4", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
-[node name="Skeleton2D" type="Skeleton2D" parent="CatAnimated"]
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
 position = Vector2( -1, -1 )
 
-[node name="hip" type="Bone2D" parent="CatAnimated/Skeleton2D"]
+[node name="hip" type="Bone2D" parent="Skeleton2D"]
 position = Vector2( 79, 203 )
 rotation = -1.5708
 rest = Transform2D( -4.37114e-08, -1, 1, -4.37114e-08, 79, 203 )
 default_length = 62.0
 
-[node name="spine" type="Bone2D" parent="CatAnimated/Skeleton2D/hip"]
+[node name="spine" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2( 15, 1 )
 rest = Transform2D( 1, 0, 0, 1, 15, 1 )
 default_length = 121.0
 
-[node name="upperchest" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/spine"]
+[node name="upperchest" type="Bone2D" parent="Skeleton2D/hip/spine"]
 position = Vector2( 16, 1 )
 rest = Transform2D( 1, 4.53224e-16, -4.53224e-16, 1, 16, 1 )
 default_length = 62.0
 
-[node name="head" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/spine/upperchest"]
+[node name="head" type="Bone2D" parent="Skeleton2D/hip/spine/upperchest"]
 position = Vector2( 35.6768, 2 )
 rest = Transform2D( 1, 0, 0, 1, 35.6768, 2 )
 default_length = 62.0
 
-[node name="earR" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/spine/upperchest/head"]
+[node name="earR" type="Bone2D" parent="Skeleton2D/hip/spine/upperchest/head"]
 position = Vector2( 76.3232, 26 )
 rotation = 0.217452
 rest = Transform2D( 0.97645, 0.215742, -0.215742, 0.97645, 76.3232, 26 )
 
-[node name="earL" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/spine/upperchest/head"]
+[node name="earL" type="Bone2D" parent="Skeleton2D/hip/spine/upperchest/head"]
 position = Vector2( 77.3232, -32 )
 rotation = -0.286178
 rest = Transform2D( 0.95933, -0.282287, 0.282287, 0.95933, 77.3232, -32 )
 
-[node name="tail" type="Bone2D" parent="CatAnimated/Skeleton2D/hip"]
+[node name="tail" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2( -1, 55 )
 rotation = 1.05832
 rest = Transform2D( 0.490337, 0.871533, -0.871533, 0.490337, -1, 55 )
 default_length = 62.0
 
-[node name="tail2" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/tail"]
+[node name="tail2" type="Bone2D" parent="Skeleton2D/hip/tail"]
 position = Vector2( 15.743, -1.46941 )
 rotation = -1.00948
 rest = Transform2D( 0.532304, -0.846553, 0.846553, 0.532304, 15.743, -1.46941 )
 default_length = 62.0
 
-[node name="tail3" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/tail/tail2"]
+[node name="tail3" type="Bone2D" parent="Skeleton2D/hip/tail/tail2"]
 position = Vector2( 22.0226, -0.0753174 )
 rotation = 0.276486
 rest = Transform2D( 0.962021, 0.272977, -0.272977, 0.962021, 22.0226, -0.0753174 )
 default_length = 62.0
 
-[node name="tail4" type="Bone2D" parent="CatAnimated/Skeleton2D/hip/tail/tail2/tail3"]
+[node name="tail4" type="Bone2D" parent="Skeleton2D/hip/tail/tail2/tail3"]
 position = Vector2( 21.1996, 3.40262 )
 rotation = 0.790303
 rest = Transform2D( 0.70363, 0.710566, -0.710566, 0.70363, 21.1996, 3.40262 )
 default_length = 19.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CatAnimated"]
-playback_speed = 0.7
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
 anims/CatIdle = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/SETUP = SubResource( 3 )
