@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
 [ext_resource path="res://skybox.png" type="Texture" id=2]
@@ -7,11 +7,7 @@
 [ext_resource path="res://prefab/Rain.tscn" type="PackedScene" id=5]
 [ext_resource path="res://prefab/GameStatus.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://images/clouds.png" type="Texture" id=8]
-
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0.0970149, 0.276119, 0.723881, 1 )
-colors = PoolColorArray( 0.427451, 0.427451, 0.427451, 0, 1, 1, 1, 0.796078, 1, 1, 1, 0.463768, 1, 1, 1, 0 )
+[ext_resource path="res://prefab/Clouds.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -45,24 +41,13 @@ color = Color( 0.182305, 0.18906, 0.191406, 1 )
 position = Vector2( 514, 301 )
 texture = ExtResource( 3 )
 
-[node name="Clouds" type="CPUParticles2D" parent="OpentruckBg"]
-position = Vector2( 40, -314 )
-amount = 50
-lifetime = 5.0
-randomness = 0.01
-texture = ExtResource( 8 )
-emission_shape = 2
-emission_rect_extents = Vector2( 800, 100 )
-direction = Vector2( 50, 0 )
-gravity = Vector2( 20, 0 )
-angular_velocity = -2.38
-angular_velocity_random = 0.19
-scale_amount = 1.6
-scale_amount_random = 1.0
-color = Color( 0.870588, 0.870588, 0.870588, 0.658824 )
-color_ramp = SubResource( 3 )
-
 [node name="Rain" parent="OpentruckBg" instance=ExtResource( 5 )]
+
+[node name="Clouds" parent="OpentruckBg" instance=ExtResource( 8 )]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+self_modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
+position = Vector2( -75, -312 )
+color = Color( 1, 1, 1, 0.658824 )
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
 margin_left = 195.0

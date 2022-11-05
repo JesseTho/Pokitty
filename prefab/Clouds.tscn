@@ -3,8 +3,8 @@
 [ext_resource path="res://images/clouds.png" type="Texture" id=1]
 
 [sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0.0970149, 0.276119, 0.723881, 1 )
-colors = PoolColorArray( 0.427451, 0.427451, 0.427451, 0, 1, 1, 1, 0.796078, 1, 1, 1, 0.463768, 1, 1, 1, 0 )
+offsets = PoolRealArray( 0.0970149, 0.268657, 0.723881, 1 )
+colors = PoolColorArray( 0.427451, 0.427451, 0.427451, 0, 1, 1, 1, 1, 1, 1, 1, 0.713726, 1, 1, 1, 0 )
 
 [node name="Clouds" type="CPUParticles2D"]
 position = Vector2( 40, -314 )

@@ -1,6 +1,7 @@
 extends Sprite
 
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,8 +14,16 @@ var endPos
 
 
 func _ready():
+	
+	$CatAnimated/AnimationPlayer.play("CatIdle")
+	
 	rng.randomize()
-	self.texture = load("res://images/cat" + str(rng.randi_range(1,4)) + ".png")
+	var catTexture = load("res://images/cat_sprite" + str(rng.randi_range(1,4)) + ".png")
+	$CatAnimated/Tail.texture = catTexture
+	$CatAnimated/Head.texture = catTexture
+	$CatAnimated/Body.texture = catTexture
+	
+	#self.texture = load("res://images/cat" + str(rng.randi_range(1,4)) + ".png")
 	
 	rng.randomize()
 	startPos = Vector2(rng.randf_range(-1024,1024), get_viewport().size.y+100)
