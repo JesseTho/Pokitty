@@ -119,10 +119,15 @@ func newDay():
 	
 func priceCheckFresh():
 	
+	if(touristlocationMod[location] == 1):
+		touristPriceMod =  (touristMod[tourists])
+	else:
+		touristPriceMod = 1
+		
 	
-	touristPriceMod =  (touristMod[tourists] * touristlocationMod[location])  
+	print("Tourist Price Mod " + str(touristPriceMod))
 	popularityMod = 1 + (popularity * 0.001)
-	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod * freshMod 
+	var maxCost = buyRange * locationPriceMod[location] * popularityMod  * freshMod * touristPriceMod
 	print("Max can charge: $" + str(maxCost))
 	if(bowlPrice <= maxCost):
 		return true
@@ -133,7 +138,11 @@ func priceCheckFresh():
 func priceCheckFrozen():
 	
 	#freshMod = 1.2
-	touristPriceMod =  (touristMod[tourists] * touristlocationMod[location])  
+	if(touristlocationMod[location] == 1):
+		touristPriceMod =  (touristMod[tourists])
+	else:
+		touristPriceMod = 1
+		
 	popularityMod = 1 + (popularity * 0.001)
 	var maxCost = buyRange * locationPriceMod[location] * popularityMod * touristPriceMod
 	print("Max can charge: $" + str(maxCost))
