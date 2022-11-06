@@ -51,7 +51,7 @@ func _ready():
 		
 	elif(GameManager.buyFrozen()): #then check to buy frozen
 		print("bought frozen poke!")
-		if(GameManager.location != 1 || GameManager.location != 2): #check for location with higher standards
+		if(GameManager.location != 1 || GameManager.location != 3): #check for location with higher standards
 			GameManager.popularity+=1
 			GameManager.likesDay+=1
 			$AnimatedSprite.visible = true
