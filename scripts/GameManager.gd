@@ -1,6 +1,6 @@
 extends Node
 #tracked vars
-var money 
+var money
 var popularity = 0
 var days = 0
 var currentDay = 0
@@ -32,7 +32,7 @@ var touristMod = [0.8,1,1.25] #Tourist Modifier
 var weatherName = ["Sunny","Cloudy","Rainy"]
 var visitorRNG = [12,50] #range of visitors in a day
 var locationName = ["Wakiki","Kalihi","Pearl City","North Shore"]
-var locationFee = [200,100,200,100] #Fee of Location
+var locationFee = [200,100,100,200] #Fee of Location
 var eventName = ["No Event Today","Halloween Parade", "Eddie Would Go", "Spam Jam"]
 var eventDesc = ["Purrfect day if you ask us!","Halloween night draws thousands of people in costume walking through Wakiki.","The Eddie is the biggest surfing event the world, only held when the surf height in the North Shore reaches 20ft.","Spam Jam is a food festival in Waikiki that celebrates everyones favorite canned meat SPAM® "]
 var rangeNames = ["Low","Medium","High"]
@@ -184,5 +184,21 @@ func buyFrozen():
 	
 func _ready():
 	pass
+
+
+func _resetGame():
+	money = 50
+	popularity = 0
+	days = 0
+	currentDay = 0
+	rice = 0
+	seasoning = 0
+	utensils = 0
+	freshAhi = 0
+	frozenAhi = 0
+	pokeSold = 0
+	totalSpent = 0
+	totalMade = 0
+	totalSold = 0
 
 
