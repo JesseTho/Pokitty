@@ -42,7 +42,8 @@ var riceAmt = [1,2,3] #Amount you can buy in lbs
 var seasonPrices = [5,8,10] #prices for seasoning
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
 var utensilPrices = [5,8,10] 
-var utensilAmt = [20,50,100] #Amount of you can buy in Sets
+var utensilAmt = [20,50,100] #Amount of you can buy in Sets.
+
 #Price Mods
 var buyRange = 12
 var freshMod = 1.2
@@ -51,6 +52,11 @@ var locationPriceMod = [1.5,1,0.9,1.1] #
 var locationExpectationNames = ["Low", "Moderate", "High", "Moderate"]
 var touristlocationMod = [1,0,0,1]
 var popularityMod = 1 + (popularity * 0.001)
+
+#Win Conditions
+var PopularityWin= 300
+var MoneyWin = 1000
+var PopMoneyWin = [150,500] #popularity and moeny
 
 
 
