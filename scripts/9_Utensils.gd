@@ -31,6 +31,8 @@ func _cartUpdate(var size, var addSubtract):
 		Lrg.text = str(lrgAmt) + " x 100 ct" 
 				
 		
+	$HBoxContainer/TotalCost.text = "Total: $%0.2f" % ((smlAmt * GameManager.utensilPrices[0]) + (medAmt * GameManager.utensilPrices[1] + (lrgAmt * GameManager.utensilPrices[2])))
+	
 	pass	
 func _buy():
 	

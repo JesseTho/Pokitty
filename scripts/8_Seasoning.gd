@@ -30,7 +30,8 @@ func _cartUpdate(var size, var addSubtract):
 		lrgAmt = lrgAmt + addSubtract
 		Lrg.text = str(lrgAmt) + " x 3lb." 
 				
-		
+	
+	$HBoxContainer/TotalCost.text = "Total: $%0.2f" % ((smlAmt * GameManager.seasonPrices[0]) + (medAmt * GameManager.seasonPrices[1] + (lrgAmt * GameManager.seasonPrices[2])))
 	pass	
 func buyseasoning():
 	

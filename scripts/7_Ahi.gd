@@ -26,7 +26,8 @@ func _cartUpdate(var freshFrozen, var addSubtract):
 		frozenamt = frozenamt + addSubtract
 		frozenahicart.text = str(frozenamt) + " lb."
 		
-		
+	$HBoxContainer/TotalCost.text = "Total: $%0.2f" % ((frozenamt * GameManager.frozenPrice) + (freshamt * GameManager.freshPrice))
+	
 	pass	
 func buyAhi():
 	
