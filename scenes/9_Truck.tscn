@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/9_Truck.gd" type="Script" id=1]
 [ext_resource path="res://skybox.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://prefab/Clouds.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Price.gd" type="Script" id=9]
+[ext_resource path="res://images/Rainbow-diagram-ROYGBIV.svg.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -43,9 +44,15 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 3 )
 
 [node name="Rain" parent="OpentruckBg" instance=ExtResource( 5 )]
-visible = false
+gravity = Vector2( 0, 99.756 )
+
+[node name="Rainbow" type="Light2D" parent="OpentruckBg/Rain"]
+position = Vector2( -1168.98, 338.554 )
+scale = Vector2( 2.02454, 1.37048 )
+texture = ExtResource( 10 )
 
 [node name="Clouds" parent="OpentruckBg" instance=ExtResource( 8 )]
+visible = false
 modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 self_modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
 position = Vector2( -68, -349 )
