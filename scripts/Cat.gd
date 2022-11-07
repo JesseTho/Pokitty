@@ -52,7 +52,8 @@ func _ready():
 		
 	elif(GameManager.buyFrozen()): #then check to buy frozen
 		print("bought frozen poke!")
-		if(GameManager.location == 0 || GameManager.location == 2): #check for location with low standards
+		#if(GameManager.location != 1 || GameManager.location != 3): #check for location with high standards
+		if(GameManager.location == 0 || GameManager.location == 2):
 			GameManager.popularity+=1
 			GameManager.likesDay+=1
 			$AnimatedSprite.visible = true
@@ -67,7 +68,8 @@ func _ready():
 			print(":|")
 			
 	
-	if(!GameManager.buyFresh()&& !GameManager.buyFrozen()): #can't buy either!
+	#if(!GameManager.buyFresh()&& !GameManager.buyFrozen()): #can't buy either!
+	else:
 		print("Can't buy poke! :(")
 		$AnimatedSprite.visible = true
 		$AnimatedSprite.frame = 0
