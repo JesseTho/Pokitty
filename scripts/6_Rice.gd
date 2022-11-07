@@ -20,15 +20,15 @@ func _cartUpdate(var size, var addSubtract):
 	
 	if(size == "sml" && smlAmt + addSubtract >= 0):
 		smlAmt = smlAmt + addSubtract
-		Sml.text = str(smlAmt) + " x " + str(GameManager.ricePrices[1])+"lb."
+		Sml.text = str(smlAmt) + " x " + str(GameManager.riceAmt[0])+"lb."
 		
 	if(size == "med" && medAmt + addSubtract >= 0):
 		medAmt = medAmt + addSubtract
-		Med.text = str(medAmt) + " x " + str(GameManager.ricePrices[1])+"lbs."
+		Med.text = str(medAmt) + " x " + str(GameManager.riceAmt[1])+"lbs."
 			
 	if(size == "lrg" && lrgAmt + addSubtract >= 0):
 		lrgAmt = lrgAmt + addSubtract
-		Lrg.text = str(lrgAmt) + " x "  + str(GameManager.ricePrices[2])+"lbs."
+		Lrg.text = str(lrgAmt) + " x "  + str(GameManager.riceAmt[2])+"lbs."
 				
 	
 	$HBoxContainer/TotalCost.text = "Total: $%0.2f" % ((smlAmt * GameManager.ricePrices[0]) + (medAmt * GameManager.ricePrices[1] + (lrgAmt * GameManager.ricePrices[2])))

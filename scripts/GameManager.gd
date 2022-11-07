@@ -54,9 +54,9 @@ var touristlocationMod = [1,0,0,1]
 var popularityMod = 1 + (popularity * 0.001)
 
 #Win Conditions
-var PopularityWin= 25 #Win is over 
-var MoneyWin = 300 
-var PopMoneyWin = [15,150] #popularity and money
+var PopularityWin= 30 #Win is over 
+var MoneyWin = 500 
+var PopMoneyWin = [20,300] #popularity and money
 
 
 
