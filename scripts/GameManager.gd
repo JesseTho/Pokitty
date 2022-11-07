@@ -40,7 +40,7 @@ var eventMod = 2 #modifer for events if matching location
 var ricePrices = [1,3,10] 
 var riceAmt = [1,4,15]#Amount you can buy in lbs 
 var seasonPrices = [5,8,10] #prices for seasoning
-var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
+var seasonAmt = [1,2,3] #Amount you can buy in lbs
 var utensilPrices = [5,8,10] 
 var utensilAmt = [20,50,100] #Amount of you can buy in Sets.
 
@@ -54,9 +54,9 @@ var touristlocationMod = [1,0,0,1]
 var popularityMod = 1 + (popularity * 0.001)
 
 #Win Conditions
-var PopularityWin= 300
-var MoneyWin = 1000
-var PopMoneyWin = [150,500] #popularity and moeny
+var PopularityWin= 25 #Win is over 
+var MoneyWin = 300 
+var PopMoneyWin = [15,150] #popularity and money
 
 
 

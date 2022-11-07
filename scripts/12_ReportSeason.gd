@@ -15,11 +15,11 @@ func _ready():
 	$Background/Popularity/PopAmt.text = str(GameManager.popularity)
 	
 func checkwin():
-	if(GameManager.money >= GameManager.MoneyWin):
+	if(GameManager.money >= GameManager.MoneyWin * GameManager.days):
 		SceneManager.LoadScene("14_MoneyEnding")
-	if(GameManager.popularity >= GameManager.PopularityWin):
+	if(GameManager.popularity >= GameManager.PopularityWin * GameManager.days ):
 		SceneManager.LoadScene("15_PopularEnding")
-	if(GameManager.popularity >= GameManager.PopMoneyWin[0] && GameManager.money >= GameManager.PopMoneyWin[1]):
+	if(GameManager.popularity >= GameManager.PopMoneyWin[0] * GameManager.days && GameManager.money >= GameManager.PopMoneyWin[1] * GameManager.days):
 		pass 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
