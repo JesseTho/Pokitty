@@ -46,10 +46,10 @@ texture = ExtResource( 3 )
 visible = false
 
 [node name="Clouds" parent="OpentruckBg" instance=ExtResource( 8 )]
-visible = false
 modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 self_modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
-position = Vector2( -75, -312 )
+position = Vector2( -68, -349 )
+scale_amount = 1.0
 color = Color( 1, 1, 1, 0.658824 )
 
 [node name="SoldPokeBowls" type="Label" parent="OpentruckBg"]
