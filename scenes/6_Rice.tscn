@@ -281,7 +281,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "0.5 lb
 0.5 lb
-0.2 lb"
+0.25lb"
 align = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
