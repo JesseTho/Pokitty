@@ -17,7 +17,7 @@ func _ready():
 	$Background/NumLikes.text = str(GameManager.likesDay)
 	
 	GameManager.pokeSold = 0
-	
+	GameManager.checkwin()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

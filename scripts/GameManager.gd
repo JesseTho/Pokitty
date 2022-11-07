@@ -207,4 +207,19 @@ func _resetGame():
 	totalMade = 0
 	totalSold = 0
 
+func checkwin():
+	if(money >= MoneyWin * days):
+		SceneManager.LoadDialog("14_MoneyEnding")
+		return
+	if(popularity >= PopularityWin * days ):
+		SceneManager.LoadDialog("15_PopularEnding")
+		return
+	#if(GameManager.popularity >= GameManager.PopMoneyWin[0] * GameManager.days && GameManager.money >= GameManager.PopMoneyWin[1] * GameManager.days):
+	
+	else:
+		SceneManager.LoadScene("0_Root")
+		return
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
 

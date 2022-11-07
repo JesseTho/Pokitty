@@ -18,5 +18,5 @@ func _on_Accept_pressed():
 
 
 func _on_Decline_pressed():
-	SceneManager.LoadScene("0_Root")
+	queue_free()
 	pass # Replace with function body.

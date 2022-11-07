@@ -13,27 +13,12 @@ func _ready():
 	$Background/IncExpLiquidText/SoldAmt.text = str(GameManager.totalSold) + "bowls!" 
 	$Background/Net/NetAmt.text = "$" + str(GameManager.totalMade - GameManager.totalSpent)
 	$Background/Popularity/PopAmt.text = str(GameManager.popularity)
+	GameManager.checkwin()
 	
 	
-	
-func checkwin():
-	if(GameManager.money >= GameManager.MoneyWin * GameManager.days):
-		SceneManager.LoadScene("14_MoneyEnding")
-		return
-	if(GameManager.popularity >= GameManager.PopularityWin * GameManager.days ):
-		SceneManager.LoadScene("15_PopularEnding")
-		return
-	#if(GameManager.popularity >= GameManager.PopMoneyWin[0] * GameManager.days && GameManager.money >= GameManager.PopMoneyWin[1] * GameManager.days):
-	
-	else:
-		SceneManager.LoadScene("0_Root")
-		return
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_Button_pressed():
 	SoundFX.get_node("CatBell").play()
-	checkwin()
+	
 	
