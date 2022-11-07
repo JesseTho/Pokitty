@@ -208,6 +208,8 @@ func _resetGame():
 	totalSpent = 0
 	totalMade = 0
 	totalSold = 0
+	MoneyOffer = 0
+	PopOffer = 0
 
 func checkwin():
 	if(money >= MoneyWin * days && MoneyOffer == 0):
