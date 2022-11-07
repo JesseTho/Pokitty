@@ -12,11 +12,11 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Accept_pressed():
+	SceneManager.LoadScene("0_Root")
+	pass # Replace with function body.
 
 
-func _on_PlayAgain_pressed():
+func _on_Decline_pressed():
 	SceneManager.LoadScene("0_Root")
 	pass # Replace with function body.

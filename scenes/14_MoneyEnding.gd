@@ -8,16 +8,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	$HBoxContainer/Popup/Title.text = "Congratulations! You have completed " + str(GameManager.days) + " days!"
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Accept_pressed():
+	SceneManager.LoadScene("0_Root")
+	pass # Replace with function body.
 
 
-func _on_PlayAgain_pressed():
+func _on_Decline_pressed():
 	SceneManager.LoadScene("0_Root")
 	pass # Replace with function body.
