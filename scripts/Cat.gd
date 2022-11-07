@@ -46,21 +46,24 @@ func _ready():
 		$AnimatedSprite.visible = true
 		$AnimatedSprite.frame = 1
 		$Poke.visible = true
+		SoundFX.get_node("Meow").play()# like
 		print(":)") 
 		
 		
 	elif(GameManager.buyFrozen()): #then check to buy frozen
 		print("bought frozen poke!")
-		if(GameManager.location != 1 || GameManager.location != 3): #check for location with higher standards
+		if(GameManager.location == 0 || GameManager.location == 2): #check for location with low standards
 			GameManager.popularity+=1
 			GameManager.likesDay+=1
 			$AnimatedSprite.visible = true
 			$AnimatedSprite.frame = 1
 			$Poke.visible = true
+			SoundFX.get_node("Meow").play()# like
 			print(":)")
 		else:
 			$AnimatedSprite.visible = true
 			$AnimatedSprite.frame = 2
+			SoundFX.get_node("Hiss").play()# don't like
 			print(":|")
 			
 	
