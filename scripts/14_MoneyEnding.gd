@@ -13,7 +13,7 @@ func _ready():
 
 
 func _on_Accept_pressed():
-	SceneManager.LoadScene("0_Root")
+	SceneManager.LoadScene("17_Ending")
 	pass # Replace with function body.
 
 
