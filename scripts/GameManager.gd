@@ -57,6 +57,8 @@ var popularityMod = 1 + (popularity * 0.001)
 var PopularityWin= 30 #Win is over 
 var MoneyWin = 500 
 var PopMoneyWin = [20,300] #popularity and money
+var MoneyOffer = 0
+var PopOffer = 0
 
 
 
@@ -208,17 +210,15 @@ func _resetGame():
 	totalSold = 0
 
 func checkwin():
-	if(money >= MoneyWin * days):
+	if(money >= MoneyWin * days && MoneyOffer == 0):
 		SceneManager.LoadDialog("14_MoneyEnding")
 		return
-	if(popularity >= PopularityWin * days ):
+	if(popularity >= PopularityWin * days && PopOffer == 0):
 		SceneManager.LoadDialog("15_PopularEnding")
 		return
 	#if(GameManager.popularity >= GameManager.PopMoneyWin[0] * GameManager.days && GameManager.money >= GameManager.PopMoneyWin[1] * GameManager.days):
 	
-	else:
-		SceneManager.LoadScene("0_Root")
-		return
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

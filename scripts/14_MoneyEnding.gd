@@ -18,5 +18,6 @@ func _on_Accept_pressed():
 
 
 func _on_Decline_pressed():
+	GameManager.MoneyOffer = 1
 	queue_free()
 	pass # Replace with function body.
