@@ -15,7 +15,7 @@ func _ready():
 func _bowlPrice(var amt):
 	if(GameManager.bowlPrice + amt >= 5 && GameManager.bowlPrice + amt <= 30):
 		GameManager.bowlPrice = GameManager.bowlPrice + amt
-	$VBoxContainer2/Price/PriceHBox/CurrentPrice.text = "$" + str(GameManager.bowlPrice) + ".00"
+	#$VBoxContainer2/Price/PriceHBox/CurrentPrice.text = "$" + str(GameManager.bowlPrice) + ".00"
 	
 
 func _on_Button_pressed(var SceneName):
@@ -32,5 +32,5 @@ func _process(delta):
 	$VBoxContainer/Seasoning/SeasoningAmount2.text = str(GameManager.seasoning)  + " lbs"
 	$VBoxContainer/Rice/RiceAmount.text = str(GameManager.rice)  + " lbs"
 	$VBoxContainer/BowlsUtensils/BowlsUtensilsAmount2.text = str(GameManager.utensils) + " sets"
-	
+	$VBoxContainer2/Price/PriceHBox/CurrentPrice.text = "$" + str(GameManager.bowlPrice) + ".00"
 	
