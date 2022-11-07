@@ -1,4 +1,4 @@
-extends Button
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,6 +8,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$HBoxContainer/Popup/Title.text = "Congratulations! You have completed " + str(GameManager.days) + " days!"
 	pass # Replace with function body.
 
