@@ -66,7 +66,7 @@ margin_right = 209.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$5 per 0.5 Lb."
+text = "$5 per 1 Lb."
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/SmallOrder"]
 anchor_left = 1.0
@@ -122,7 +122,7 @@ margin_right = 202.0
 margin_bottom = 15.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$8 per 1 lb."
+text = "$8 per 2 lb."
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/MediumOrder"]
 anchor_left = 1.0
@@ -178,7 +178,7 @@ margin_right = 208.0
 margin_bottom = 15.5
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "$10 per 2 lb."
+text = "$10 per 3 lb."
 
 [node name="BuyHBox" type="HBoxContainer" parent="VBoxContainer/BigOrder"]
 anchor_left = 1.0
@@ -240,7 +240,8 @@ margin_top = -79.0
 margin_bottom = -65.0
 custom_colors/font_color = Color( 0.180392, 0.341176, 0.345098, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "Poke Recipe"
+text = "Poke Recipe
+per Bowl"
 align = 1
 
 [node name="Ingredients" type="Label" parent="Recipe"]
