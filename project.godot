@@ -12,7 +12,8 @@ config_version=4
 
 config/name="Poke Cat"
 run/main_scene="res://scenes/0_Root.tscn"
-config/icon="res://images/yellowcat.png"
+boot_splash/image="res://images/splash.png"
+config/icon="res://images/icon.png"
 
 [autoload]
 
