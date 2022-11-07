@@ -25,20 +25,20 @@ var likesDay = 0
 
 #Game Balance 
 var startingMoney = 500 #starting money
-var fishPriceRNG = [10,20] #range of price of fish
+var fishPriceRNG = [5,10] #range of price of fish
 var fishPriceMod = 1.25 #how much more is fresh fish compared to frozen
 var weatherMod = [1.2,1,0.8] #how weather effects visitors
 var touristMod = [0.8,1,1.25] #Tourist Modifier
 var weatherName = ["Sunny","Cloudy","Rainy"]
 var visitorRNG = [12,50] #range of visitors in a day
 var locationName = ["Wakiki","Kalihi","Pearl City","North Shore"]
-var locationFee = [250,100,80,150] #Fee of Location
+var locationFee = [100,50,40,75] #Fee of Location
 var eventName = ["No Event Today","Halloween Parade", "Eddie Would Go", "Spam Jam"]
 var eventDesc = ["Purrfect day if you ask us!","Halloween night draws thousands of people in costume walking through Wakiki.","The Eddie is the biggest surfing event the world, only held when the surf height in the North Shore reaches 20ft.","Spam Jam is a food festival in Waikiki that celebrates everyones favorite canned meat SPAM® "]
 var rangeNames = ["Low","Medium","High"]
 var eventMod = 2 #modifer for events if matching location
-var ricePrices = [5,8,10] 
-var riceAmt = [1,2,3] #Amount you can buy in lbs 
+var ricePrices = [1,3,10] 
+var riceAmt = [1,4,15]#Amount you can buy in lbs 
 var seasonPrices = [5,8,10] #prices for seasoning
 var seasonAmt = [0.5,1,2] #Amount you can buy in lbs
 var utensilPrices = [5,8,10] 
@@ -46,7 +46,7 @@ var utensilAmt = [20,50,100] #Amount of you can buy in Sets.
 
 #Price Mods
 var buyRange = 12
-var freshMod = 1.2
+var freshMod = 1.3
 var touristPriceMod =  1.6
 var locationPriceMod = [1.5,1,0.9,1.1] #
 var locationExpectationNames = ["Low", "Moderate", "High", "Moderate"]

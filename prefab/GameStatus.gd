@@ -13,5 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$".".text = "Day: " + str(GameManager.currentDay) + "\n" + "Money: $" + str(GameManager.money)  + "\n" + "Likes: " +  str(GameManager.popularity)
+	$".".text = "Day: " + str(GameManager.currentDay) +"/"+str(GameManager.days )+ "\n" + "Money: $" + str(GameManager.money)  + "\n" + "Likes: " +  str(GameManager.popularity)
 	

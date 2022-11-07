@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/4_News.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Chunkfive Ex.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://images/visitor_moderate_icon.png" type="Texture" id=11]
 [ext_resource path="res://images/weather_sunny_icon.png" type="Texture" id=12]
 [ext_resource path="res://images/price_high_icon.png" type="Texture" id=13]
+[ext_resource path="res://images/cat_sprite2.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0.901961 )
@@ -62,6 +63,7 @@ anchor_bottom = 0.5
 margin_top = 80.0
 margin_right = 1024.0
 margin_bottom = 530.0
+rect_pivot_offset = Vector2( 954, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -142,10 +144,26 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="EventInfo2" type="Label" parent="HBoxContainer/Popup/Events"]
+anchor_left = 0.527897
+anchor_top = -0.417291
+anchor_right = 0.610873
+anchor_bottom = -0.0411445
+margin_left = 141.0
+margin_top = 62.0
+margin_right = 255.0
+margin_bottom = 86.0
+text = "Average Visitors:      20-30 
+Not Counting Tourists
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="EventDesc" type="Label" parent="HBoxContainer/Popup/Events"]
 anchor_left = -0.0228898
 anchor_top = -0.137615
-anchor_right = 0.492132
+anchor_right = 0.336195
 anchor_bottom = 0.0366972
 margin_left = 141.0
 margin_top = 62.0
@@ -204,7 +222,7 @@ custom_styles/panel = ExtResource( 3 )
 margin_top = 21.0
 margin_right = 216.0
 margin_bottom = 35.0
-text = "VISITORS"
+text = "TOURISTS"
 align = 1
 valign = 1
 
@@ -218,7 +236,7 @@ margin_right = 216.0
 margin_bottom = 127.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
-text = "Current Visitors"
+text = "Current Tourists"
 align = 1
 valign = 1
 
@@ -264,5 +282,16 @@ margin_bottom = 40.0
 text = "X"
 align = 1
 valign = 1
+
+[node name="Head" type="Polygon2D" parent="HBoxContainer"]
+position = Vector2( 763, 160.515 )
+scale = Vector2( 0.171318, 0.171318 )
+texture = ExtResource( 14 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 130.167, 26.5, 137.667, 8.66667, 149.667, 21.5, 168.167, 19.6667, 186.833, 22.5, 202, 9.5, 208.5, 23.1667, 214.333, 42.8333, 215.167, 65.3333, 211.5, 83.8333, 198.333, 98.1667, 182.333, 107.167, 168.667, 108.667, 153.333, 105.167, 135.833, 92.3333, 128.167, 81.8333, 125.667, 63, 126.5, 40.3333, 167.507, 40.3298, 167.357, 58.4708, 167.507, 75.7121, 167.207, 95.2024 )
+uv = PoolVector2Array( 130.167, 26.5, 137.667, 8.66667, 149.667, 21.5, 168.167, 19.6667, 186.833, 22.5, 202, 9.5, 208.5, 23.1667, 214.333, 42.8333, 215.167, 65.3333, 211.5, 83.8333, 198.333, 98.1667, 182.333, 107.167, 168.667, 108.667, 153.333, 105.167, 135.833, 92.3333, 128.167, 81.8333, 125.667, 63, 126.5, 40.3333, 167.507, 40.3298, 167.357, 58.4708, 167.507, 75.7121, 167.207, 95.2024 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 17, 18, 2, 0 ), PoolIntArray( 2, 3, 18 ), PoolIntArray( 3, 4, 18 ), PoolIntArray( 18, 7, 6, 4 ), PoolIntArray( 16, 19, 18, 17 ), PoolIntArray( 19, 8, 7, 18 ), PoolIntArray( 15, 20, 19, 16 ), PoolIntArray( 20, 9, 8, 19 ), PoolIntArray( 14, 21, 20, 15 ), PoolIntArray( 13, 12, 21, 14 ), PoolIntArray( 12, 11, 10, 21 ), PoolIntArray( 21, 10, 9, 20 ) ]
+bones = [ "hip", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head", PoolRealArray( 0.31, 0, 0.31, 1, 0.31, 0, 0.42, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "hip/spine/upperchest/head/earR", PoolRealArray( 0, 0, 0, 0, 0, 1, 0.29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/spine/upperchest/head/earL", PoolRealArray( 0.13, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "hip/tail/tail2/tail3/tail4", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+internal_vertex_count = 4
 
 [connection signal="pressed" from="HBoxContainer/Popup/Button" to="." method="_on_Button_pressed"]

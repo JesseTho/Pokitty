@@ -10,9 +10,9 @@ config_version=4
 
 [application]
 
-config/name="Pokitty"
+config/name="Poke Cat"
 run/main_scene="res://scenes/0_Root.tscn"
-config/icon="res://images/icon.png"
+config/icon="res://images/yellowcat.png"
 
 [autoload]
 
