@@ -19,6 +19,7 @@ func _ready():
 
 
 func _on_Button_pressed():
+	SceneManager.LoadScene("0_Root")
 	SoundFX.get_node("CatBell").play()
 	
 	
