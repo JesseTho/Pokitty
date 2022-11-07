@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/relaxingguitar.mp3-2319a46bcaafc699f13260f44125e5f7.mp3str"
+
+[deps]
+
+source_file="res://audio/relaxingguitar.mp3"
+dest_files=[ "res://.import/relaxingguitar.mp3-2319a46bcaafc699f13260f44125e5f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
