@@ -11,6 +11,8 @@ config_version=4
 [application]
 
 config/name="Poke Cat"
+config/description="LTEC 654
+Created by Alyssa Calasicas, Hanna Park, Jesse Thompson, and Ronald Deese"
 run/main_scene="res://scenes/0_Root.tscn"
 boot_splash/image="res://images/splash.png"
 config/icon="res://images/icon.png"
