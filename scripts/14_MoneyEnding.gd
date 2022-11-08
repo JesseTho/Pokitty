@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HBoxContainer/Popup/Title.text = "Congratulations! You gained $%0.2f" % GameManager.money + " in "+ str(currentDay) + " days!"
+	$HBoxContainer/Popup/Title.text = "Congratulations! You gained $%0.2f" % GameManager.money + " in "+ str(GameManager.currentDay) + " days!"
 	pass # Replace with function body.
 
 
